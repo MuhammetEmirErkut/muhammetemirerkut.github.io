@@ -8,11 +8,17 @@
     --text-primary: #1c1a17;
     --text-secondary: #5e564d;
     --text-muted: #8c8172;
-    --accent: #2e4f4f;
-    --accent-rgb: 46, 79, 79;
-    --accent-hover: #1e3535;
-    --terracotta: #c87a53;
-    --terracotta-rgb: 200, 122, 83;
+    
+    /* App 1: Komisyon Accent */
+    --accent-komisyon: #2e4f4f;
+    --accent-komisyon-hover: #1e3535;
+    --terracotta-komisyon: #c87a53;
+    
+    /* App 2: CareerLift Accent */
+    --accent-lift: #4f46e5;
+    --accent-lift-hover: #3730a3;
+    --pink-lift: #db2777;
+    
     --border: rgba(44, 38, 28, 0.08);
     --border-hover: rgba(44, 38, 28, 0.15);
     
@@ -98,7 +104,7 @@ header {
 }
 
 .logo span {
-    color: var(--terracotta);
+    color: var(--terracotta-komisyon);
 }
 
 nav ul {
@@ -122,7 +128,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--terracotta);
+    background-color: var(--terracotta-komisyon);
     transition: var(--transition-smooth);
 }
 
@@ -142,7 +148,7 @@ nav a:hover::after {
     border-radius: 99px;
     font-weight: 600;
     font-size: 0.9rem;
-    background-color: var(--accent);
+    background-color: var(--accent-komisyon);
     color: #ffffff;
     border: 1px solid transparent;
     cursor: pointer;
@@ -150,7 +156,7 @@ nav a:hover::after {
 }
 
 .btn-contact:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--accent-komisyon-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -172,7 +178,7 @@ nav a:hover::after {
     border: 1px solid var(--border);
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--terracotta);
+    color: var(--terracotta-komisyon);
     margin-bottom: 24px;
     animation: float 4s ease-in-out infinite;
 }
@@ -188,7 +194,7 @@ nav a:hover::after {
 }
 
 .hero h1 span {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--terracotta) 100%);
+    background: linear-gradient(135deg, var(--accent-komisyon) 0%, var(--accent-lift) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -201,55 +207,12 @@ nav a:hover::after {
     font-weight: 400;
 }
 
-/* Interactive CTA Area */
-.cta-group {
+/* Showcase Section */
+.showcase-section {
+    padding: 32px 0 96px 0;
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 48px;
-}
-
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    border-radius: 14px;
-    font-weight: 600;
-    font-size: 1rem;
-    background-color: var(--accent);
-    color: #ffffff;
-    box-shadow: 0 10px 25px rgba(46, 79, 79, 0.15);
-}
-
-.btn-primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(46, 79, 79, 0.25);
-}
-
-.btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    border-radius: 14px;
-    font-weight: 600;
-    font-size: 1rem;
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border);
-}
-
-.btn-secondary:hover {
-    background-color: var(--bg-surface);
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-}
-
-/* Featured App Section: Komisyon 101 */
-.featured-section {
-    padding: 64px 0 96px 0;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .section-label {
@@ -259,7 +222,7 @@ nav a:hover::after {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-muted);
-    margin-bottom: 40px;
+    margin-bottom: -20px;
 }
 
 .showcase-card {
@@ -292,8 +255,21 @@ nav a:hover::after {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(200, 122, 83, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(200, 122, 83, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
     pointer-events: none;
+}
+
+/* Reverse card styling */
+.showcase-card.reverse {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.showcase-card.reverse .showcase-content {
+    order: 2;
+}
+
+.showcase-card.reverse .showcase-preview {
+    order: 1;
 }
 
 .app-meta {
@@ -307,11 +283,21 @@ nav a:hover::after {
     width: 64px;
     height: 64px;
     border-radius: 16px;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--terracotta) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 8px 20px rgba(44, 38, 28, 0.08);
+}
+
+/* Custom theme icons */
+.app-icon-wrapper.komisyon {
+    background: linear-gradient(135deg, var(--accent-komisyon) 0%, var(--terracotta-komisyon) 100%);
     box-shadow: 0 8px 20px rgba(46, 79, 79, 0.15);
+}
+
+.app-icon-wrapper.lift {
+    background: linear-gradient(135deg, var(--accent-lift) 0%, var(--pink-lift) 100%);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
 }
 
 .app-icon-wrapper svg {
@@ -325,7 +311,14 @@ nav a:hover::after {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--terracotta);
+}
+
+.app-category.komisyon {
+    color: var(--terracotta-komisyon);
+}
+
+.app-category.lift {
+    color: var(--accent-lift);
 }
 
 .showcase-content h2 {
@@ -370,29 +363,58 @@ nav a:hover::after {
     width: 20px;
     height: 20px;
     fill: none;
-    stroke: var(--accent);
     stroke-width: 2.5;
 }
 
-/* Store Badge Buttons */
-.download-badges {
+.feature-item.komisyon svg {
+    stroke: var(--accent-komisyon);
+}
+
+.feature-item.lift svg {
+    stroke: var(--accent-lift);
+}
+
+/* Interactive Badge Actions & Legal Links */
+.action-container {
     display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .store-badge {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    padding: 12px 24px;
-    background-color: var(--text-primary);
+    padding: 14px 28px;
     color: #ffffff;
-    border-radius: 12px;
+    border-radius: 14px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: var(--transition-smooth);
-    border: 1px solid var(--text-primary);
+    width: fit-content;
+}
+
+.store-badge.komisyon {
+    background-color: var(--accent-komisyon);
+    box-shadow: 0 8px 20px rgba(46, 79, 79, 0.15);
+}
+
+.store-badge.komisyon:hover {
+    background-color: var(--accent-komisyon-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(46, 79, 79, 0.25);
+}
+
+.store-badge.lift {
+    background-color: var(--accent-lift);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
+}
+
+.store-badge.lift:hover {
+    background-color: var(--accent-lift-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.25);
 }
 
 .store-badge svg {
@@ -401,11 +423,42 @@ nav a:hover::after {
     fill: currentColor;
 }
 
-.store-badge:hover {
-    background-color: transparent;
+/* Legal Web Links */
+.app-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.app-link-item {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid transparent;
+}
+
+.app-link-item svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+}
+
+.app-link-item:hover {
     color: var(--text-primary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+}
+
+.app-link-item.komisyon:hover {
+    border-color: var(--accent-komisyon);
+}
+
+.app-link-item.lift:hover {
+    border-color: var(--accent-lift);
 }
 
 /* Simulated App Device Preview */
@@ -430,11 +483,18 @@ nav a:hover::after {
 .device-screen {
     width: 100%;
     height: 100%;
-    background-color: var(--bg-surface);
     display: flex;
     flex-direction: column;
     padding: 24px;
     font-family: var(--font-body);
+}
+
+.device-screen.komisyon {
+    background-color: var(--bg-surface);
+}
+
+.device-screen.lift {
+    background-color: #f0f1ff;
 }
 
 .device-notch {
@@ -450,7 +510,7 @@ nav a:hover::after {
     z-index: 10;
 }
 
-/* UI Simulation Inside Phone */
+/* UI Simulation Inside Phone (Komisyon 101) */
 .mock-ui-header {
     display: flex;
     justify-content: space-between;
@@ -463,7 +523,14 @@ nav a:hover::after {
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.1rem;
-    color: var(--accent);
+}
+
+.mock-ui-logo.komisyon {
+    color: var(--accent-komisyon);
+}
+
+.mock-ui-logo.lift {
+    color: var(--accent-lift);
 }
 
 .mock-ui-card {
@@ -503,13 +570,12 @@ nav a:hover::after {
     padding-top: 8px;
 }
 
-.mock-ui-row span:last-child {
+.mock-ui-row.komisyon span:last-child {
     font-weight: 700;
-    color: var(--terracotta);
+    color: var(--terracotta-komisyon);
 }
 
 .mock-ui-button {
-    background-color: var(--accent);
     color: #ffffff;
     text-align: center;
     padding: 12px;
@@ -517,175 +583,67 @@ nav a:hover::after {
     font-size: 0.85rem;
     font-weight: 600;
     margin-top: auto;
+}
+
+.mock-ui-button.komisyon {
+    background-color: var(--accent-komisyon);
     box-shadow: 0 4px 10px rgba(46, 79, 79, 0.2);
 }
 
-/* Secondary Apps Grid Section */
-.apps-grid-section {
-    background-color: var(--bg-surface);
-    padding: 96px 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+.mock-ui-button.lift {
+    background-color: var(--accent-lift);
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
 }
 
-.grid-intro {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 56px auto;
-}
-
-.grid-intro h2 {
-    font-size: 2.4rem;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-}
-
-.grid-intro p {
-    color: var(--text-secondary);
-}
-
-.apps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-}
-
-.grid-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 36px;
+/* UI Simulation Inside Phone (CareerLift) */
+.mock-ui-list {
     display: flex;
     flex-direction: column;
-    transition: var(--transition-smooth);
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
+    gap: 10px;
 }
 
-.grid-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--border-hover);
-}
-
-.grid-card-icon {
-    width: 48px;
-    height: 48px;
+.mock-ui-list-item {
+    background: #ffffff;
     border-radius: 12px;
-    background-color: var(--bg-surface);
+    padding: 12px 16px;
+    border: 1px solid rgba(44, 38, 28, 0.04);
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    color: var(--accent);
+    gap: 12px;
 }
 
-.grid-card-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
+.mock-ui-badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
 }
 
-.grid-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    letter-spacing: -0.3px;
+.mock-ui-badge.blue {
+    background-color: #3b82f6;
 }
 
-.grid-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-    flex-grow: 1;
+.mock-ui-badge.green {
+    background-color: #10b981;
 }
 
-.grid-card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent);
+.mock-ui-badge.purple {
+    background-color: #8b5cf6;
 }
 
-.grid-card-link svg {
-    width: 16px;
-    height: 16px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.5;
-    transition: var(--transition-bounce);
-}
-
-.grid-card:hover .grid-card-link svg {
-    transform: translateX(4px);
-}
-
-/* Coming Soon Badge */
-.status-badge {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    padding: 4px 10px;
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.status-badge.coming-soon {
-    background-color: rgba(200, 122, 83, 0.1);
-    color: var(--terracotta);
-}
-
-/* App Ads Text Verification Section */
-.ads-verify-section {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.verify-card {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px dashed var(--border-hover);
-    background-color: rgba(246, 240, 229, 0.3);
+.mock-ui-list-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 16px;
 }
 
-.verify-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
-    border-radius: 99px;
-    background-color: rgba(46, 79, 79, 0.08);
-    color: var(--accent);
+.mock-ui-list-text span:first-child {
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
-.verify-badge svg {
-    width: 14px;
-    height: 14px;
-    fill: currentColor;
-}
-
-.verify-card h3 {
-    font-size: 1.5rem;
-    letter-spacing: -0.3px;
-}
-
-.verify-card p {
+.mock-ui-list-text span:last-child {
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    max-width: 480px;
 }
 
 /* Footer Section */
@@ -716,7 +674,7 @@ footer {
 }
 
 .footer-logo span {
-    color: var(--terracotta);
+    color: var(--terracotta-komisyon);
 }
 
 .social-links {
@@ -743,7 +701,7 @@ footer {
 }
 
 .social-icon:hover {
-    background-color: var(--terracotta);
+    background-color: var(--terracotta-komisyon);
     color: #ffffff;
     transform: translateY(-3px);
 }
@@ -777,14 +735,26 @@ footer {
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
-    .showcase-card {
+    .showcase-card, .showcase-card.reverse {
         grid-template-columns: 1fr;
         padding: 40px;
         gap: 40px;
     }
     
+    .showcase-card.reverse .showcase-content {
+        order: 1;
+    }
+    
+    .showcase-card.reverse .showcase-preview {
+        order: 2;
+    }
+    
     .showcase-preview {
-        order: -1;
+        order: 2;
+    }
+    
+    .showcase-content {
+        order: 1;
     }
 }
 
@@ -795,11 +765,6 @@ footer {
     
     nav {
         display: none;
-    }
-    
-    .cta-group {
-        flex-direction: column;
-        align-items: stretch;
     }
     
     .features-list {
@@ -816,5 +781,17 @@ footer {
         flex-direction: column;
         gap: 16px;
         text-align: center;
+    }
+    
+    .action-container {
+        align-items: stretch;
+    }
+    
+    .store-badge {
+        width: 100%;
+    }
+    
+    .app-links {
+        justify-content: center;
     }
 }
