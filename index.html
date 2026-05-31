@@ -3,52 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammet Emir Erkut - Developer Portal</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            background-color: #161b22;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            border: 1px solid #30363d;
-        }
-        h1 {
-            color: #58a6ff;
-            margin-bottom: 8px;
-            font-size: 2rem;
-        }
-        p {
-            color: #8b949e;
-            font-size: 1.1rem;
-            margin-bottom: 24px;
-        }
-        .badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: #f0f6fc;
-        }
-    </style>
+    <meta name="description" content="Muhammet Emir Erkut - Mobil Uygulama Geliştirici Portalı. Komisyon 101 ve diğer yenilikçi mobil uygulamalarımı burada inceleyin.">
+    <title>Muhammet Emir Erkut - Mobil Uygulama Vitrini</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Muhammet Emir Erkut</h1>
-        <p>Mobil Uygulama Geliştirici Portalı</p>
-        <div class="badge">app-ads.txt Verified</div>
-    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                Emir<span>Erkut</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#featured">Öne Çıkan Uygulama</a></li>
+                    <li><a href="#apps">Uygulama Vitrini</a></li>
+                    <li><a href="#verification">Doğrulama</a></li>
+                </ul>
+            </nav>
+            <a href="mailto:erkutmuhammetemir@gmail.com" class="btn-contact">
+                İletişime Geç
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Mobil Uygulama Portfolyosu
+            </div>
+            <h1>Yenilikçi & Premium <span>Mobil Deneyimler</span> Tasarlıyorum</h1>
+            <p>Kullanıcı odaklı, yüksek performanslı ve modern arayüz standartlarına sahip iOS ve Android uygulamalarımı keşfedin.</p>
+            <div class="cta-group">
+                <a href="#featured" class="btn-primary">
+                    Uygulamaları Keşfet
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="https://github.com/MuhammetEmirErkut" target="_blank" class="btn-secondary">
+                    GitHub Profilim
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured App Showcase: Komisyon 101 -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <h2 class="section-label">Öne Çıkan Çalışmam</h2>
+            
+            <div class="showcase-card">
+                <div class="showcase-content">
+                    <div class="app-meta">
+                        <div class="app-icon-wrapper">
+                            <!-- Custom SVG for calculation app icon -->
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+                                <line x1="8" y1="9" x2="16" y2="9" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="8" y1="15" x2="16" y2="15" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="12" y1="9" x2="12" y2="15" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="app-category">Finans & Üretkenlik</span>
+                    </div>
+                    
+                    <h2>Komisyon 101</h2>
+                    <p class="app-tagline">Komisyon Hesabında Karmaşıklığa Son!</p>
+                    <p class="app-description">Komisyon 101, işletmeler ve bağımsız satıcılar için POS komisyon oranlarını, banka taksit maliyetlerini ve net kazançları anında hesaplayan profesyonel bir mobil yardımcıdır. Hatalı hesaplamaların önüne geçin ve kârlılığınızı koruyun.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Detaylı POS Hesaplama
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Taksit & Faiz Kırılımı
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Kayıtlı Hesaplamalar
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            Modern & Hızlı Arayüz
+                        </div>
+                    </div>
+                    
+                    <div class="download-badges">
+                        <a href="#" class="store-badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 2.99 1.11.09 2.27-.58 3-1.43z"/>
+                            </svg>
+                            <span>App Store'dan İndir</span>
+                        </a>
+                        <a href="#" class="store-badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 5.27v13.46c0 .82.68 1.46 1.48 1.46.27 0 .54-.08.78-.24l13.11-7.73c.48-.28.78-.81.78-1.38s-.3-1.1-.78-1.38L5.26 3.05c-.24-.16-.51-.25-.78-.25C3.68 2.8 3 3.44 3 4.26v1.01zM16.5 12L5 18.8V5.2L16.5 12z"/>
+                            </svg>
+                            <span>Google Play'den Al</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="showcase-preview">
+                    <!-- Interactive 3D/CSS simulated iOS App Screen -->
+                    <div class="device-mockup">
+                        <div class="device-notch"></div>
+                        <div class="device-screen">
+                            <div class="mock-ui-header">
+                                <span class="mock-ui-logo">Komisyon101</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            
+                            <div class="mock-ui-card">
+                                <span class="mock-ui-title">Çekim Tutarı</span>
+                                <div class="mock-ui-value">₺10,000.00</div>
+                            </div>
+                            
+                            <div class="mock-ui-card">
+                                <span class="mock-ui-title">Hesap Detayı</span>
+                                <div class="mock-ui-row">
+                                    <span>POS Oranı</span>
+                                    <span>%1.89</span>
+                                </div>
+                                <div class="mock-ui-row">
+                                    <span>Komisyon Kesintisi</span>
+                                    <span>₺189.00</span>
+                                </div>
+                                <div class="mock-ui-row">
+                                    <span>Net Kazanç</span>
+                                    <span>₺9,811.00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mock-ui-button">Yeni Hesaplama Yap</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Apps Showcase Grid -->
+    <section id="apps" class="apps-grid-section">
+        <div class="container">
+            <div class="grid-intro">
+                <h2>Uygulama Portfolyosu</h2>
+                <p>İhtiyaçlara yenilikçi çözümler sunan, titizlikle geliştirilmiş tüm mobil uygulamalarım.</p>
+            </div>
+            
+            <div class="apps-grid">
+                <!-- App 1 -->
+                <div class="grid-card">
+                    <div class="grid-card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2.5"/><line x1="8" y1="15" x2="16" y2="15" stroke="currentColor" stroke-width="2.5"/></svg>
+                    </div>
+                    <h3>Komisyon 101</h3>
+                    <p>Satıcılar ve finansla ilgilenenler için anlık POS komisyon ve taksit hesaplayıcı mobil uygulama.</p>
+                    <a href="#featured" class="grid-card-link">
+                        Uygulamayı İncele 
+                        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                
+                <!-- App 2 (Coming Soon) -->
+                <div class="grid-card">
+                    <span class="status-badge coming-soon">Çok Yakında</span>
+                    <div class="grid-card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Bütçe Analiz 101</h3>
+                    <p>Finansal özgürlüğünüzü yönetmenize yardımcı olacak, yapay zeka destekli bütçe ve gider optimizasyon aracı.</p>
+                    <span class="grid-card-link" style="opacity: 0.6; cursor: default;">
+                        Hazırlanıyor
+                    </span>
+                </div>
+                
+                <!-- App 3 (Coming Soon) -->
+                <div class="grid-card">
+                    <span class="status-badge coming-soon">Tasarım Aşamasında</span>
+                    <div class="grid-card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <h3>Yatırım Takip</h3>
+                    <p>Farklı borsalardaki varlıklarınızı tek bir panelden canlı olarak takip edebileceğiniz güvenli cüzdan analizörü.</p>
+                    <span class="grid-card-link" style="opacity: 0.6; cursor: default;">
+                        Planlama Aşamasında
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Ads Text Verification Section -->
+    <section id="verification" class="ads-verify-section">
+        <div class="container">
+            <div class="verify-card">
+                <div class="verify-badge">
+                    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Mağaza Doğrulaması Aktif
+                </div>
+                <h3>Developer App-Ads.txt Doğrulaması</h3>
+                <p>Google AdMob ve diğer reklam sağlayıcıları için geliştirici doğrulama dosyası dizinde aktif olarak yayınlanmaktadır.</p>
+                <a href="app-ads.txt" target="_blank" class="btn-secondary" style="padding: 12px 24px; font-size: 0.9rem;">
+                    app-ads.txt Görüntüle
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    Emir<span>Erkut</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/MuhammetEmirErkut" target="_blank" class="social-icon" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a href="mailto:erkutmuhammetemir@gmail.com" class="social-icon" aria-label="Email">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Muhammet Emir Erkut. Tüm Hakları Saklıdır.</p>
+                <div class="footer-links">
+                    <a href="#featured">Öne Çıkan</a>
+                    <a href="#apps">Portfolyo</a>
+                    <a href="#verification">Doğrulama</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
