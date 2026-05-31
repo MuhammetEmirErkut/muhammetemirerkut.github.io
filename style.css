@@ -22,6 +22,9 @@
     --border: rgba(44, 38, 28, 0.08);
     --border-hover: rgba(44, 38, 28, 0.15);
     
+    /* Phone Mockup Frame Color (Bronze-Slate instead of harsh black) */
+    --phone-frame: #2c251e;
+    
     /* Fonts */
     --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -374,91 +377,87 @@ nav a:hover::after {
     stroke: var(--accent-lift);
 }
 
-/* Interactive Badge Actions & Legal Links */
-.action-container {
+/* Action Container side-by-side Button Layout */
+.app-actions {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-.store-badge {
+.btn-action {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 14px 28px;
-    color: #ffffff;
+    gap: 10px;
+    padding: 14px 24px;
     border-radius: 14px;
     font-weight: 600;
     font-size: 0.95rem;
     transition: var(--transition-smooth);
-    width: fit-content;
+    min-width: 210px;
+    border: 2px solid transparent;
 }
 
-.store-badge.komisyon {
-    background-color: var(--accent-komisyon);
-    box-shadow: 0 8px 20px rgba(46, 79, 79, 0.15);
-}
-
-.store-badge.komisyon:hover {
-    background-color: var(--accent-komisyon-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(46, 79, 79, 0.25);
-}
-
-.store-badge.lift {
-    background-color: var(--accent-lift);
-    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
-}
-
-.store-badge.lift:hover {
-    background-color: var(--accent-lift-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.25);
-}
-
-.store-badge svg {
-    width: 22px;
-    height: 22px;
+.btn-action svg {
+    width: 20px;
+    height: 20px;
     fill: currentColor;
 }
 
-/* Legal Web Links */
-.app-links {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.app-link-item {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding-bottom: 2px;
-    border-bottom: 1.5px solid transparent;
-}
-
-.app-link-item svg {
-    width: 14px;
-    height: 14px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2.5;
-}
-
-.app-link-item:hover {
-    color: var(--text-primary);
-}
-
-.app-link-item.komisyon:hover {
+/* Komisyon 101 Buttons (Outlined primary design to remove dark block look) */
+.btn-action.primary.komisyon {
     border-color: var(--accent-komisyon);
+    background-color: var(--accent-komisyon);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(46, 79, 79, 0.15);
 }
 
-.app-link-item.lift:hover {
+.btn-action.primary.komisyon:hover {
+    background-color: transparent;
+    color: var(--accent-komisyon);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-action.secondary.komisyon {
+    border-color: var(--border-hover);
+    background-color: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-action.secondary.komisyon:hover {
+    border-color: var(--accent-komisyon);
+    background-color: rgba(46, 79, 79, 0.04);
+    color: var(--accent-komisyon);
+    transform: translateY(-2px);
+}
+
+/* CareerLift Buttons */
+.btn-action.primary.lift {
     border-color: var(--accent-lift);
+    background-color: var(--accent-lift);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.15);
+}
+
+.btn-action.primary.lift:hover {
+    background-color: transparent;
+    color: var(--accent-lift);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-action.secondary.lift {
+    border-color: var(--border-hover);
+    background-color: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-action.secondary.lift:hover {
+    border-color: var(--accent-lift);
+    background-color: rgba(79, 70, 229, 0.04);
+    color: var(--accent-lift);
+    transform: translateY(-2px);
 }
 
 /* Simulated App Device Preview */
@@ -472,10 +471,10 @@ nav a:hover::after {
     width: 290px;
     height: 590px;
     background: #000000;
-    border: 12px solid #1c1a17;
+    border: 12px solid var(--phone-frame);
     border-radius: 44px;
     position: relative;
-    box-shadow: 0 30px 70px rgba(44, 38, 28, 0.25);
+    box-shadow: 0 30px 70px rgba(44, 38, 28, 0.18);
     overflow: hidden;
 }
 
@@ -500,7 +499,7 @@ nav a:hover::after {
 .device-notch {
     width: 120px;
     height: 22px;
-    background-color: #1c1a17;
+    background-color: var(--phone-frame);
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     position: absolute;
@@ -646,10 +645,10 @@ nav a:hover::after {
     color: var(--text-secondary);
 }
 
-/* Footer Section */
+/* Footer Section - Refactored to light theme to eliminate heavy blackness */
 footer {
-    background-color: var(--text-primary);
-    color: #ffffff;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
     padding: 64px 0 32px 0;
     border-top: 1px solid var(--border);
 }
@@ -658,7 +657,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border);
     padding-bottom: 40px;
     margin-bottom: 32px;
 }
@@ -686,12 +685,13 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(44, 38, 28, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     transition: var(--transition-smooth);
+    border: 1px solid var(--border);
 }
 
 .social-icon svg {
@@ -701,7 +701,8 @@ footer {
 }
 
 .social-icon:hover {
-    background-color: var(--terracotta-komisyon);
+    background-color: var(--accent-komisyon);
+    border-color: var(--accent-komisyon);
     color: #ffffff;
     transform: translateY(-3px);
 }
@@ -711,7 +712,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-secondary);
 }
 
 .footer-links {
@@ -720,7 +721,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 /* Keyframes & Animations */
@@ -783,15 +784,13 @@ footer {
         text-align: center;
     }
     
-    .action-container {
+    .app-actions {
+        flex-direction: column;
         align-items: stretch;
     }
     
-    .store-badge {
+    .btn-action {
         width: 100%;
-    }
-    
-    .app-links {
-        justify-content: center;
+        min-width: 0;
     }
 }
