@@ -795,65 +795,6 @@ footer {
     }
 }
 
-/* Developer Portfolio Extensions */
-.skills-section {
-    padding: 64px 0;
-    border-bottom: 1px solid var(--border);
-}
-.skills-grid-full {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 48px;
-    align-items: start;
-}
-.section-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 24px;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-}
-.section-title::after {
-    content: '';
-    display: block;
-    width: 48px;
-    height: 4px;
-    background: linear-gradient(135deg, var(--accent-komisyon) 0%, var(--accent-lift) 100%);
-    margin-top: 12px;
-    border-radius: 2px;
-}
-
-/* Skills Layout */
-.skill-category h3 {
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-}
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.skill-tag {
-    background-color: var(--bg-surface);
-    color: var(--text-primary);
-    padding: 8px 16px;
-    border-radius: 99px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border: 1px solid var(--border);
-    transition: var(--transition-smooth);
-}
-.skill-tag:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-    background-color: #ffffff;
-    box-shadow: var(--shadow-sm);
-}
-
 /* Project Tech Stack Badges */
 .tech-badges {
     display: flex;
@@ -878,15 +819,5 @@ footer {
     color: var(--accent-lift);
 }
 
-/* Responsive Extensions */
-@media (max-width: 900px) {
-    .skills-grid-full {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    .skills-section {
-        padding: 48px 0;
-    }
-}
 
 
