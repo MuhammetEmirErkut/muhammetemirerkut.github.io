@@ -796,14 +796,14 @@ footer {
 }
 
 /* Developer Portfolio Extensions */
-.about-section {
+.skills-section {
     padding: 64px 0;
     border-bottom: 1px solid var(--border);
 }
-.about-grid {
+.skills-grid-full {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 48px;
     align-items: start;
 }
 .section-title {
@@ -822,19 +822,8 @@ footer {
     margin-top: 12px;
     border-radius: 2px;
 }
-.about-content p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 20px;
-}
 
 /* Skills Layout */
-.skills-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-}
 .skill-category h3 {
     font-size: 0.9rem;
     font-weight: 700;
@@ -891,12 +880,13 @@ footer {
 
 /* Responsive Extensions */
 @media (max-width: 900px) {
-    .about-grid {
+    .skills-grid-full {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 32px;
     }
-    .about-section {
+    .skills-section {
         padding: 48px 0;
     }
 }
+
 
