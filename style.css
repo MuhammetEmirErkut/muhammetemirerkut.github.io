@@ -794,3 +794,109 @@ footer {
         min-width: 0;
     }
 }
+
+/* Developer Portfolio Extensions */
+.about-section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+}
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--accent-komisyon) 0%, var(--accent-lift) 100%);
+    margin-top: 12px;
+    border-radius: 2px;
+}
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+/* Skills Layout */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.skill-category h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-tag {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    transition: var(--transition-smooth);
+}
+.skill-tag:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Project Tech Stack Badges */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+.tech-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tech-badge.komisyon {
+    background-color: rgba(46, 79, 79, 0.06);
+    color: var(--accent-komisyon);
+}
+.tech-badge.lift {
+    background-color: rgba(79, 70, 229, 0.06);
+    color: var(--accent-lift);
+}
+
+/* Responsive Extensions */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .about-section {
+        padding: 48px 0;
+    }
+}
+

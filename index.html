@@ -20,8 +20,9 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#komisyon">Komisyon 101</a></li>
-                    <li><a href="#careerlift">CareerLift</a></li>
+                    <li><a href="#about">Hakkımda</a></li>
+                    <li><a href="#skills">Yetenekler</a></li>
+                    <li><a href="#projects">Projelerim</a></li>
                 </ul>
             </nav>
             <a href="mailto:erkutmuhammetemir@gmail.com" class="btn-contact">
@@ -36,19 +37,66 @@
             <div class="hero-badge">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
-                Mobil Uygulama Portfolyosu
+                Yazılım Mühendisi & Mobil Geliştirici
             </div>
-            <h1>Yenilikçi & Premium <span>Mobil Deneyimler</span> Tasarlıyorum</h1>
-            <p>Kullanıcı odaklı, yüksek performanslı ve modern arayüz standartlarına sahip uygulamalarımı keşfedin.</p>
+            <h1>Muhammet Emir Erkut - <span>iOS & Mobil Geliştirici</span></h1>
+            <p>Swift ve SwiftUI ekosisteminde, yüksek performanslı, temiz mimariye (Clean Architecture) sahip ve premium kullanıcı deneyimi sunan mobil uygulamalar inşa ediyorum.</p>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="container about-section">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 class="section-title">Hakkımda</h2>
+                <p>iOS platformu başta olmak üzere, mobil uygulama geliştirme süreçlerine odaklanmış bir yazılım mühendisiyim. Projelerimde sürdürülebilir kod mimarisi (MVVM, Clean Architecture), nesne yönelimli programlama prensipleri (SOLID) ve pürüzsüz kullanıcı deneyimleri (UX/UI) oluşturma ilkelerini benimsiyorum.</p>
+                <p>App Store'da yayında olan ve aktif kullanıcılar tarafından kullanılan finans ve kariyer odaklı ürünlerin tüm tasarım, geliştirme ve yayın süreçlerini uçtan uca yürüterek fikirleri çalışan ürünlere dönüştürüyorum.</p>
+            </div>
+            <div id="skills" class="skills-content">
+                <h2 class="section-title">Yetenekler & Teknolojiler</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Diller & Core</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Swift</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">Objective-C</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & SDKs</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SwiftUI</span>
+                            <span class="skill-tag">UIKit</span>
+                            <span class="skill-tag">Combine</span>
+                            <span class="skill-tag">CoreData</span>
+                            <span class="skill-tag">Flutter</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Araçlar & Mimari</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MVVM</span>
+                            <span class="skill-tag">Clean Architecture</span>
+                            <span class="skill-tag">Xcode</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">App Store Connect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Showcase Section for alternating Apps -->
-    <section class="container showcase-section">
-        <h2 class="section-label">Uygulamalarım</h2>
+    <section id="projects" class="container showcase-section">
+        <h2 class="section-label">Geliştirdiğim Projeler / Ürünler</h2>
 
         <!-- App 1: Komisyon 101 -->
         <div id="komisyon" class="showcase-card">
@@ -70,10 +118,14 @@
                 </div>
 
                 <h2>Komisyon 101</h2>
-                <p class="app-tagline">Komisyon Hesabında Karmaşıklığa Son!</p>
-                <p class="app-description">Komisyon 101, işletmeler ve bağımsız satıcılar için POS komisyon oranlarını,
-                    banka taksit maliyetlerini ve net kazançları anında hesaplayan profesyonel bir mobil yardımcıdır.
-                    Hatalı hesaplamaların önüne geçin ve kârlılığınızı koruyun.</p>
+                <p class="app-tagline">Finans & Üretkenlik Asistanı</p>
+                <p class="app-description">Komisyon 101, işletmeler ve bağımsız satıcılar için bankaların güncel POS komisyon oranlarını, taksit maliyetlerini ve net kazanç tutarlarını anında hesaplayan finansal bir yardımcı araçtır. POS komisyon kesintilerini şeffaf şekilde analiz etmeyi sağlar.</p>
+                <div class="tech-badges">
+                    <span class="tech-badge komisyon">Swift</span>
+                    <span class="tech-badge komisyon">SwiftUI</span>
+                    <span class="tech-badge komisyon">Financial Math Core</span>
+                    <span class="tech-badge komisyon">Local Storage</span>
+                </div>
 
                 <div class="features-list">
                     <div class="feature-item komisyon">
@@ -180,10 +232,14 @@
                 </div>
 
                 <h2>CareerLift</h2>
-                <p class="app-tagline">Kariyer Yolculuğunuzu Üst Seviyeye Taşıyın</p>
-                <p class="app-description">CareerLift, profesyonel hedeflerinizi yöneten, özgeçmişinizi güçlendirip iş
-                    başvurularınızı optimize eden akıllı kariyer koçunuzdur. Başvurularınızı tek bir noktadan takip
-                    edin, mülakat hazırlıkları ile yeni fırsatlara tam donanımlı hazırlanın.</p>
+                <p class="app-tagline">Kariyer & Başvuru Yönetim Sistemi</p>
+                <p class="app-description">CareerLift, iş başvurularını tek bir noktadan takip eden, mülakat hazırlıklarını yöneten ve yapay zeka entegrasyonuyla özgeçmiş yazım süreçlerini optimize eden akıllı bir kariyer yönetim asistanıdır.</p>
+                <div class="tech-badges">
+                    <span class="tech-badge lift">Swift</span>
+                    <span class="tech-badge lift">SwiftUI</span>
+                    <span class="tech-badge lift">AI API Integration</span>
+                    <span class="tech-badge lift">CoreData</span>
+                </div>
 
                 <div class="features-list">
                     <div class="feature-item lift">
@@ -301,8 +357,9 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Muhammet Emir Erkut. Tüm Hakları Saklıdır.</p>
                 <div class="footer-links">
-                    <a href="#komisyon">Komisyon 101</a>
-                    <a href="#careerlift">CareerLift</a>
+                    <a href="#about">Hakkımda</a>
+                    <a href="#skills">Yetenekler</a>
+                    <a href="#projects">Projelerim</a>
                 </div>
             </div>
         </div>
