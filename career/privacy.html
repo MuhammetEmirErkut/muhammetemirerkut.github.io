@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container nav-wrapper">
@@ -40,60 +45,108 @@
         </div>
     </section>
 
-    <!-- Content -->
+    <!-- Content Grid Layout -->
     <main class="container">
-        <div class="legal-card">
-            <span class="meta-date">Last Updated: January 2026</span>
-
-            <div class="highlight-box">
-                <h2>Information We Collect</h2>
-                <p>CareerLift collects minimal personal information necessary to provide our service. Most of your content is stored securely on your own device:</p>
-                <ul>
-                    <li>CV data you create (stored locally on your device)</li>
-                    <li>App usage analytics (fully anonymous)</li>
-                    <li>Subscription status (managed securely by Apple App Store)</li>
+        <div class="legal-layout">
+            
+            <!-- Sticky Sidebar Table of Contents -->
+            <aside class="toc-sidebar">
+                <h3 class="toc-title">Table of Contents</h3>
+                <ul class="toc-menu">
+                    <li class="toc-item active"><a href="#overview">Overview</a></li>
+                    <li class="toc-item"><a href="#use-info">1. How We Use Data</a></li>
+                    <li class="toc-item"><a href="#data-storage">2. Data Storage</a></li>
+                    <li class="toc-item"><a href="#third-party">3. Third Parties</a></li>
+                    <li class="toc-item"><a href="#security">4. Data Security</a></li>
+                    <li class="toc-item"><a href="#rights">5. Your Rights</a></li>
+                    <li class="toc-item"><a href="#children">6. Children's Privacy</a></li>
+                    <li class="toc-item"><a href="#policy-changes">7. Policy Changes</a></li>
+                    <li class="toc-item"><a href="#contact">8. Contact Us</a></li>
                 </ul>
+            </aside>
+
+            <!-- Legal Documents Card -->
+            <div class="legal-card">
+                <span class="meta-date">Last Updated: January 2026</span>
+
+                <!-- Section: Overview -->
+                <section id="overview" class="legal-section">
+                    <div class="highlight-box">
+                        <h2>Information We Collect</h2>
+                        <p>CareerLift collects minimal personal information necessary to provide our service. Most of your content is stored securely on your own device:</p>
+                        <ul>
+                            <li>CV data you create (stored locally on your device)</li>
+                            <li>App usage analytics (fully anonymous)</li>
+                            <li>Subscription status (managed securely by Apple App Store)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 1 -->
+                <section id="use-info" class="legal-section">
+                    <h2>1. How We Use Your Information</h2>
+                    <p>We process collected data to run and enhance the user experience. Specifically, we use it to:</p>
+                    <ul>
+                        <li>Provide CV building, rating, and editing services.</li>
+                        <li>Deliver premium templates and AI-powered features for subscribers.</li>
+                        <li>Improve app performance, stability, and troubleshoot bugs.</li>
+                        <li>Process subscription payments (handled automatically by Apple's payment system).</li>
+                    </ul>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="data-storage" class="legal-section">
+                    <h2>2. Data Storage & Ownership</h2>
+                    <p>Your CV data is stored <strong>locally</strong> on your device. We do not upload or store your personal CV details, descriptions, or contact information on our servers unless you explicitly opt in to use cloud sync features.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="third-party" class="legal-section">
+                    <h2>3. Third-Party Services</h2>
+                    <p>We integrate with a limited number of trusted third-party providers for billing and crash reporting:</p>
+                    <ul>
+                        <li><strong>Apple App Store:</strong> Processes all transaction billing, license validation, and subscriptions.</li>
+                        <li><strong>Apple Analytics:</strong> Provides anonymous usage graphs to identify screen loading failures (opt-out available in iOS system settings).</li>
+                    </ul>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="security" class="legal-section">
+                    <h2>4. Data Security</h2>
+                    <p>We implement appropriate physical, technical, and administrative security measures to protect your information. All networks and data transmission routes are encrypted using SSL/TLS industry protocols.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="rights" class="legal-section">
+                    <h2>5. Your Rights</h2>
+                    <p>As a user, you have absolute rights over your data. You may:</p>
+                    <ul>
+                        <li>Access and review your stored CV parameters inside the app.</li>
+                        <li>Modify or permanently delete any CV template data at any time.</li>
+                        <li>Export your CV data in PDF format.</li>
+                        <li>Manage, pause, or terminate premium subscriptions within Apple ID settings.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="children" class="legal-section">
+                    <h2>6. Children's Privacy</h2>
+                    <p>Our application is not intended for children under 13. We do not knowingly collect or store any information from individuals under the age of 13.</p>
+                </section>
+
+                <!-- Section 7 -->
+                <section id="policy-changes" class="legal-section">
+                    <h2>7. Changes to This Policy</h2>
+                    <p>We may update this privacy policy periodically to reflect operational changes. Changes will take effect immediately upon being posted on this website page.</p>
+                </section>
+
+                <!-- Section 8 -->
+                <section id="contact" class="legal-section">
+                    <h2>8. Contact Us</h2>
+                    <p>If you have any questions or concerns regarding this privacy policy, please contact us by emailing developer support at <a href="mailto:erkutmuhammetemir@gmail.com" style="color: var(--accent); font-weight: 600;">erkutmuhammetemir@gmail.com</a>.</p>
+                </section>
             </div>
-
-            <h2>1. How We Use Your Information</h2>
-            <p>We process collected data to run and enhance the user experience. Specifically, we use it to:</p>
-            <ul>
-                <li>Provide CV building, rating, and editing services.</li>
-                <li>Deliver premium templates and AI-powered features for subscribers.</li>
-                <li>Improve app performance, stability, and troubleshoot bugs.</li>
-                <li>Process subscription payments (handled automatically by Apple's payment system).</li>
-            </ul>
-
-            <h2>2. Data Storage & Ownership</h2>
-            <p>Your CV data is stored <strong>locally</strong> on your device. We do not upload or store your personal CV details, descriptions, or contact information on our servers unless you explicitly opt in to use cloud sync features.</p>
-
-            <h2>3. Third-Party Services</h2>
-            <p>We integrate with a limited number of trusted third-party providers for billing and crash reporting:</p>
-            <ul>
-                <li><strong>Apple App Store:</strong> Processes all transaction billing, license validation, and subscriptions.</li>
-                <li><strong>Apple Analytics:</strong> Provides anonymous usage graphs to identify screen loading failures (opt-out available in iOS system settings).</li>
-            </ul>
-
-            <h2>4. Data Security</h2>
-            <p>We implement appropriate physical, technical, and administrative security measures to protect your information. All networks and data transmission routes are encrypted using SSL/TLS industry protocols.</p>
-
-            <h2>5. Your Rights</h2>
-            <p>As a user, you have absolute rights over your data. You may:</p>
-            <ul>
-                <li>Access and review your stored CV parameters inside the app.</li>
-                <li>Modify or permanently delete any CV template data at any time.</li>
-                <li>Export your CV data in PDF format.</li>
-                <li>Manage, pause, or terminate premium subscriptions within Apple ID settings.</li>
-            </ul>
-
-            <h2>6. Children's Privacy</h2>
-            <p>Our application is not intended for children under 13. We do not knowingly collect or store any information from individuals under the age of 13.</p>
-
-            <h2>7. Changes to This Policy</h2>
-            <p>We may update this privacy policy periodically to reflect operational changes. Changes will take effect immediately upon being posted on this website page.</p>
-
-            <h2>8. Contact Us</h2>
-            <p>If you have any questions or concerns regarding this privacy policy, please contact us by emailing developer support at <a href="mailto:erkutmuhammetemir@gmail.com" style="color: var(--accent); font-weight: 600;">erkutmuhammetemir@gmail.com</a>.</p>
+            
         </div>
     </main>
 
@@ -111,6 +164,44 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll Spy and Progress Script -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-10% 0px -75% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.toc-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        const activeLink = document.querySelector(`.toc-item a[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.parentElement.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.legal-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Reading Progress Bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        });
+    </script>
 
 </body>
 </html>

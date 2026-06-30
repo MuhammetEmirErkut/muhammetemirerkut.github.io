@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container nav-wrapper">
@@ -40,39 +45,79 @@
         </div>
     </section>
 
-    <!-- Content -->
+    <!-- Content Grid Layout -->
     <main class="container">
-        <div class="legal-card">
-            <span class="meta-date">Last Updated: January 2026</span>
-
-            <div class="highlight-box">
-                <h2>CareerLift Premium Subscription</h2>
-                <p>By subscribing to our Premium tier, you unlock advanced capabilities:</p>
-                <ul>
-                    <li><strong>Service Title:</strong> CareerLift Premium Features</li>
-                    <li><strong>Subscription Length:</strong> Available on a Monthly or Yearly billing cycles</li>
-                    <li><strong>Pricing:</strong> $4.99 per Month or $59.99 per Year (subject to local currencies and taxes)</li>
-                    <li><strong>Content & Services:</strong> Unlimited resume templates, interactive interview prep guides, advanced AI suggestions, and priority developer support</li>
+        <div class="legal-layout">
+            
+            <!-- Sticky Sidebar Table of Contents -->
+            <aside class="toc-sidebar">
+                <h3 class="toc-title">Table of Contents</h3>
+                <ul class="toc-menu">
+                    <li class="toc-item active"><a href="#overview">Overview</a></li>
+                    <li class="toc-item"><a href="#billing">1. Billing Info</a></li>
+                    <li class="toc-item"><a href="#auto-renewal">2. Auto-Renewal</a></li>
+                    <li class="toc-item"><a href="#cancellation">3. Cancellation</a></li>
+                    <li class="toc-item"><a href="#payments">4. Refund Policy</a></li>
+                    <li class="toc-item"><a href="#adjustments">5. Adjustments</a></li>
+                    <li class="toc-item"><a href="#contact">6. Contact</a></li>
                 </ul>
+            </aside>
+
+            <!-- Legal Documents Card -->
+            <div class="legal-card">
+                <span class="meta-date">Last Updated: January 2026</span>
+
+                <!-- Section: Overview -->
+                <section id="overview" class="legal-section">
+                    <div class="highlight-box">
+                        <h2>CareerLift Premium Subscription</h2>
+                        <p>By subscribing to our Premium tier, you unlock advanced capabilities:</p>
+                        <ul>
+                            <li><strong>Service Title:</strong> CareerLift Premium Features</li>
+                            <li><strong>Subscription Length:</strong> Available on Monthly or Yearly billing cycles</li>
+                            <li><strong>Pricing:</strong> $4.99 per Month or $59.99 per Year (subject to local currencies and taxes)</li>
+                            <li><strong>Content & Services:</strong> Unlimited resume templates, interactive interview prep guides, advanced AI suggestions, and priority developer support</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 1 -->
+                <section id="billing" class="legal-section">
+                    <h2>1. Subscription & Billing</h2>
+                    <p>Your subscription payment will be charged directly to your Apple ID Account at confirmation of purchase. Subscriptions are billed automatically based on your chosen term (monthly or yearly) unless auto-renew is explicitly disabled.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="auto-renewal" class="legal-section">
+                    <h2>2. Auto-Renewal Policy</h2>
+                    <p>Subscriptions auto-renew automatically. To prevent renewal charges, you must disable the auto-renewal feature at least 24 hours prior to the conclusion of your current subscription period. Your account will be processed for renewal payment within 24 hours before the end of the active term.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="cancellation" class="legal-section">
+                    <h2>3. Cancellation Procedure</h2>
+                    <p>You can review, manage, or terminate your active subscription plans anytime by accessing your Apple ID Account Settings on your iOS device. Note that cancellations will take effect at the conclusion of the active billing cycle; no partial refunds are provided for early cancellation.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="payments" class="legal-section">
+                    <h2>4. Payments & Refunds</h2>
+                    <p>All subscription transactions and refund requests are handled exclusively by Apple Inc. under the standard App Store guidelines and terms. To request refunds, please refer to the Apple Support system.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="adjustments" class="legal-section">
+                    <h2>5. Service Adjustments</h2>
+                    <p>CareerLift reserves the right to modify template varieties, pricing tiers, feature lists, or discontinue certain options with reasonable notice to active subscribers.</p>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="contact" class="legal-section">
+                    <h2>6. Contact Details</h2>
+                    <p>For questions or issues regarding our subscription services, terms, or policies, please reach out to developer support at <a href="mailto:erkutmuhammetemir@gmail.com" style="color: var(--accent); font-weight: 600;">erkutmuhammetemir@gmail.com</a>.</p>
+                </section>
             </div>
-
-            <h2>1. Subscription & Billing</h2>
-            <p>Your subscription payment will be charged directly to your Apple ID Account at confirmation of purchase. Subscriptions are billed automatically based on your chosen term (monthly or yearly) unless auto-renew is explicitly disabled.</p>
-
-            <h2>2. Auto-Renewal Policy</h2>
-            <p>Subscriptions auto-renew automatically. To prevent renewal charges, you must disable the auto-renewal feature at least 24 hours prior to the conclusion of your current subscription period. Your account will be processed for renewal payment within 24 hours before the end of the active term.</p>
-
-            <h2>3. Cancellation Procedure</h2>
-            <p>You can review, manage, or terminate your active subscription plans anytime by accessing your Apple ID Account Settings on your iOS device. Note that cancellations will take effect at the conclusion of the active billing cycle; no partial refunds are provided for early cancellation.</p>
-
-            <h2>4. Payments & Refunds</h2>
-            <p>All subscription transactions and refund requests are handled exclusively by Apple Inc. under the standard App Store guidelines and terms. To request refunds, please refer to the Apple Support system.</p>
-
-            <h2>5. Service Adjustments</h2>
-            <p>CareerLift reserves the right to modify template varieties, pricing tiers, feature lists, or discontinue certain options with reasonable notice to active subscribers.</p>
-
-            <h2>6. Contact Details</h2>
-            <p>For questions or issues regarding our subscription services, terms, or policies, please reach out to developer support at <a href="mailto:erkutmuhammetemir@gmail.com" style="color: var(--accent); font-weight: 600;">erkutmuhammetemir@gmail.com</a>.</p>
+            
         </div>
     </main>
 
@@ -90,6 +135,44 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll Spy and Progress Script -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-10% 0px -75% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.toc-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        const activeLink = document.querySelector(`.toc-item a[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.parentElement.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.legal-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Reading Progress Bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        });
+    </script>
 
 </body>
 </html>

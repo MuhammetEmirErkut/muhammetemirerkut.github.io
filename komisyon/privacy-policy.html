@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container nav-wrapper">
@@ -40,43 +45,83 @@
         </div>
     </section>
 
-    <!-- Content -->
+    <!-- Content Grid Layout -->
     <main class="container">
-        <div class="legal-card">
-            <span class="meta-date">Son Güncelleme: 8 Şubat 2026</span>
+        <div class="legal-layout">
+            
+            <!-- Sticky Sidebar Table of Contents -->
+            <aside class="toc-sidebar">
+                <h3 class="toc-title">İçindekiler</h3>
+                <ul class="toc-menu">
+                    <li class="toc-item active"><a href="#overview">Özet</a></li>
+                    <li class="toc-item"><a href="#info-collect">1. Toplanan Bilgiler</a></li>
+                    <li class="toc-item"><a href="#use-info">2. Bilgilerin Kullanımı</a></li>
+                    <li class="toc-item"><a href="#sharing">3. Bilgilerin Paylaşımı</a></li>
+                    <li class="toc-item"><a href="#security">4. Veri Güvenliği</a></li>
+                    <li class="toc-item"><a href="#policy-changes">5. Değişiklikler</a></li>
+                    <li class="toc-item"><a href="#contact">6. İletişim</a></li>
+                </ul>
+            </aside>
 
-            <div class="highlight-box">
-                <h2>Özet</h2>
-                <p>Muhammet Emir Erkut ("biz", "bizim" veya "bize") olarak, Komisyon 101 mobil uygulamasını ("Uygulama") kullanırken gizliliğinize en üst düzeyde önem veriyoruz. Uygulamamız finansal hesaplamalarınızı yerel olarak cihazınızda gerçekleştirir ve kişisel verilerinizi sunucularımızda saklamaz.</p>
+            <!-- Legal Documents Card -->
+            <div class="legal-card">
+                <span class="meta-date">Son Güncelleme: 8 Şubat 2026</span>
+
+                <!-- Section: Overview -->
+                <section id="overview" class="legal-section">
+                    <div class="highlight-box">
+                        <h2>Özet</h2>
+                        <p>Muhammet Emir Erkut ("biz", "bizim" veya "bize") olarak, Komisyon 101 mobil uygulamasını ("Uygulama") kullanırken gizliliğinize en üst düzeyde önem veriyoruz. Uygulamamız finansal hesaplamalarınızı yerel olarak cihazınızda gerçekleştirir ve kişisel verilerinizi sunucularımızda saklamaz.</p>
+                    </div>
+                </section>
+
+                <!-- Section 1 -->
+                <section id="info-collect" class="legal-section">
+                    <h2>1. Toplanan Bilgiler</h2>
+                    <p>Uygulamamız, kullanıcı deneyimini iyileştirmek, çökmeleri önlemek ve temel fonksiyonları sağlamak amacıyla sınırlı teknik veriler işleyebilir:</p>
+                    <ul>
+                        <li><strong>Kullanıcı Tarafından Girilen Veriler:</strong> POS komisyon hesaplaması için girdiğiniz satış tutarı, taksit sayısı veya komisyon oranı gibi veriler tamamen cihazınızda yerel olarak işlenir ve hiçbir uzak sunucuya aktarılmaz.</li>
+                        <li><strong>Otomatik Olarak Toplanan Anonim Veriler:</strong> Uygulamanın kararlılığını sağlamak ve olası çökmeleri gidermek amacıyla cihaz modeli, işletim sistemi sürümü ve anonim kullanım istatistikleri (Google Firebase Crashlytics veya Analytics aracılığıyla) toplanabilir.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="use-info" class="legal-section">
+                    <h2>2. Bilgilerin Kullanımı</h2>
+                    <p>Toplanan sınırlı anonim teknik verileri yalnızca aşağıdaki amaçlarla kullanıyoruz:</p>
+                    <ul>
+                        <li>Uygulamanın temel hesaplama özelliklerini hatasız şekilde çalıştırmak ve sürdürmek.</li>
+                        <li>Uygulamadaki yazılımsal hataları ve çökme durumlarını tespit edip gidermek.</li>
+                        <li>Kullanıcı arayüzünü ve deneyimini gelecek güncellemelerde geliştirmek.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="sharing" class="legal-section">
+                    <h2>3. Bilgilerin Paylaşımı</h2>
+                    <p>Kullanıcılarımızın finansal hesaplama veya kişisel verilerini kesinlikle üçüncü şahıslara veya şirketlere satmıyor ya da kiralamıyoruz. Ancak, analitik ve hata izleme servis sağlayıcılarıyla (örneğin Google Firebase) sınırlı, anonim teknik veri paylaşımları yapılabilir.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="security" class="legal-section">
+                    <h2>4. Veri Güvenliği</h2>
+                    <p>Bilgilerinizin ve yerel depolama alanınızın güvenliğini sağlamak için makul ve güncel endüstri standartlarında önlemler alıyoruz. Ancak, dijital ortamlarda hiçbir veri aktarımının %100 güvenli olmadığını belirtmek isteriz.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="policy-changes" class="legal-section">
+                    <h2>5. Politika Değişiklikleri</h2>
+                    <p>Gelişen özellikler veya yasal gereksinimler doğrultusunda bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Yapılan tüm güncellemeler bu sayfada yayınlandığı andan itibaren geçerlilik kazanacaktır.</p>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="contact" class="legal-section">
+                    <h2>6. İletişim</h2>
+                    <p>Bu gizlilik politikasıyla veya uygulamamızın veri işlemleriyle ilgili her türlü sorunuz için bizimle iletişime geçebilirsiniz:</p>
+                    <p>E-posta: <a href="mailto:erkutmuhammetemir@gmail.com" style="color: var(--accent-terracotta); font-weight: 600;">erkutmuhammetemir@gmail.com</a></p>
+                </section>
             </div>
-
-            <h2>1. Toplanan Bilgiler</h2>
-            <p>Uygulamamız, kullanıcı deneyimini iyileştirmek, çökmeleri önlemek ve temel fonksiyonları sağlamak amacıyla sınırlı teknik veriler işleyebilir:</p>
-            <ul>
-                <li><strong>Kullanıcı Tarafından Girilen Veriler:</strong> POS komisyon hesaplaması için girdiğiniz satış tutarı, taksit sayısı veya komisyon oranı gibi veriler tamamen cihazınızda yerel olarak işlenir ve hiçbir uzak sunucuya aktarılmaz.</li>
-                <li><strong>Otomatik Olarak Toplanan Anonim Veriler:</strong> Uygulamanın kararlılığını sağlamak ve olası çökmeleri gidermek amacıyla cihaz modeli, işletim sistemi sürümü ve anonim kullanım istatistikleri (Google Firebase Crashlytics veya Analytics aracılığıyla) toplanabilir.</li>
-            </ul>
-
-            <h2>2. Bilgilerin Kullanımı</h2>
-            <p>Toplanan sınırlı anonim teknik verileri yalnızca aşağıdaki amaçlarla kullanıyoruz:</p>
-            <ul>
-                <li>Uygulamanın temel hesaplama özelliklerini hatasız şekilde çalıştırmak ve sürdürmek.</li>
-                <li>Uygulamadaki yazılımsal hataları ve çökme durumlarını tespit edip gidermek.</li>
-                <li>Kullanıcı arayüzünü ve deneyimini gelecek güncellemelerde geliştirmek.</li>
-            </ul>
-
-            <h2>3. Bilgilerin Paylaşımı</h2>
-            <p>Kullanıcılarımızın finansal hesaplama veya kişisel verilerini kesinlikle üçüncü şahıslara veya şirketlere satmıyor ya da kiralamıyoruz. Ancak, analitik ve hata izleme servis sağlayıcılarıyla (örneğin Google Firebase) sınırlı, anonim teknik veri paylaşımları yapılabilir.</p>
-
-            <h2>4. Veri Güvenliği</h2>
-            <p>Bilgilerinizin ve yerel depolama alanınızın güvenliğini sağlamak için makul ve güncel endüstri standartlarında önlemler alıyoruz. Ancak, dijital ortamlarda hiçbir veri aktarımının %100 güvenli olmadığını belirtmek isteriz.</p>
-
-            <h2>5. Politika Değişiklikleri</h2>
-            <p>Gelişen özellikler veya yasal gereksinimler doğrultusunda bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Yapılan tüm güncellemeler bu sayfada yayınlandığı andan itibaren geçerlilik kazanacaktır.</p>
-
-            <h2>6. İletişim</h2>
-            <p>Bu gizlilik politikasıyla veya uygulamamızın veri işlemleriyle ilgili her türlü sorunuz için bizimle iletişime geçebilirsiniz:</p>
-            <p>E-posta: <a href="mailto:erkutmuhammetemir@gmail.com" style="color: var(--accent-terracotta); font-weight: 600;">erkutmuhammetemir@gmail.com</a></p>
+            
         </div>
     </main>
 
@@ -93,6 +138,44 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll Spy and Progress Script -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-10% 0px -75% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.toc-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        const activeLink = document.querySelector(`.toc-item a[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.parentElement.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.legal-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Reading Progress Bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        });
+    </script>
 
 </body>
 </html>
