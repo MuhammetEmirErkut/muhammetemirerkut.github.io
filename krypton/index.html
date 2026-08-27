@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KryptonMCP — Zero-Trust Security & Privacy Gateway for AI Agents</title>
+    <meta name="description"
+        content="Stop cleartext PII leaks, destructive prompt injections, and static database credentials in your Model Context Protocol (MCP) tool pipelines. Pure Go, sub-millisecond overhead.">
+    <meta name="keywords"
+        content="KryptonMCP, Model Context Protocol, AI Security, PII Masking, Prompt Injection Guardrails, JIT Credentials, Merkle Audit Ledger, Pure Go">
+    <meta name="author" content="Muhammet Emir Erkut">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KryptonMCP — Zero-Trust Security & Privacy Gateway for AI Agents">
+    <meta property="og:description"
+        content="In-flight PII Masking (~33μs), Prompt Injection Guardrails, JIT Ephemeral Database Credentials & Cryptographic RFC 6962 Merkle Audit Ledger.">
+    <meta property="og:image" content="../assets/krypton_logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/krypton_logo.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="nav-brand">
+                <img src="../assets/krypton_logo.png" alt="Krypton Logo" class="nav-logo">
+                <span>Krypton<span class="brand-accent">MCP</span></span>
+                <span class="nav-version">v0.1.0-alpha</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#pillars">Architecture</a></li>
+                <li><a href="#comparison">Before & After</a></li>
+                <li><a href="#benchmarks">Benchmarks</a></li>
+                <li><a href="#integrations">Integrations</a></li>
+                <li><a href="#quickstart">Quickstart</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://github.com/MuhammetEmirErkut/krypton-mcp" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm" id="nav-github-star">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+                    <span>Star on GitHub</span>
+                </a>
+                <a href="#quickstart" class="btn btn-primary btn-sm">Quickstart</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-pill">
+                    <span class="hero-pill-dot"></span>
+                    <span>High-Performance Pure Go Security Gateway for MCP</span>
+                </div>
+
+                <h1 class="hero-title">
+                    The Zero-Trust Security & <br>
+                    <span class="highlight">Privacy Gateway for AI Agents</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Stop cleartext PII leaks, destructive prompt injections, and static database credentials in your
+                    Model Context Protocol (MCP) tool pipelines. Single-binary, pure Go with sub-millisecond overhead.
+                </p>
+
+                <!-- Key Badges -->
+                <div class="badge-grid">
+                    <div class="feature-tag">⚡ <strong>~33μs</strong> PII Masking Latency</div>
+                    <div class="feature-tag">🛡️ Pure Go / Zero Dependencies</div>
+                    <div class="feature-tag">🔏 RFC 6962 Merkle Audit Ledger</div>
+                    <div class="feature-tag">🔑 JIT Ephemeral Postgres & Redis Users</div>
+                    <div class="feature-tag">📜 Apache 2.0 Open Source</div>
+                </div>
+
+                <!-- Hero CTAs -->
+                <div class="hero-ctas">
+                    <a href="https://github.com/MuhammetEmirErkut/krypton-mcp" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary" id="hero-github-cta">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>Star on GitHub</span>
+                    </a>
+                    <a href="#quickstart" class="btn btn-blue" id="hero-quickstart-cta">
+                        <span>Quickstart in 30s</span>
+                    </a>
+                    <a href="https://github.com/MuhammetEmirErkut/krypton-mcp#readme" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-secondary" id="hero-docs-cta">
+                        <span>Architecture Docs</span>
+                    </a>
+                </div>
+
+                <!-- Hero Visual (Terminal Demo) -->
+                <div class="hero-media-wrapper">
+                    <div class="terminal-window">
+                        <div class="terminal-body">
+                            <img src="../assets/krypton_demo.gif"
+                                alt="Krypton MCP Demo: In-flight PII Masking and Audit Verification" class="demo-gif">
+                        </div>
+
+                        <div class="terminal-footer-bar">
+                            <span>⚡ In-Flight PII Masking Active</span>
+                            <span>🔏 Merkle Ledger: RFC 6962 Checksum Verified</span>
+                            <span>⏱️ Latency: +33.4μs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Core Problem -->
+        <section id="problem" class="section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Security Dilemma</span>
+                    <h2 class="section-title">Why Connecting AI Directly to DBs Fails</h2>
+                    <p class="section-desc">
+                        Modern AI clients (Claude Desktop, Cursor, LangChain, AutoGen) connect directly to databases,
+                        caches, and APIs via MCP. Without an intermediary security gateway, serious vulnerabilities occur:
+                    </p>
+                </div>
+
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                </path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>1. PII & Data Exfiltration</h3>
+                        <p>
+                            Cleartext customer emails, credit cards, SSNs, and private API keys are dumped into LLM prompt
+                            contexts and transmitted to external model providers.
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3>2. Destructive Injections</h3>
+                        <p>
+                            Malicious user inputs or indirect web injections trick autonomous models into invoking
+                            destructive tools: <code>DROP TABLE</code>, <code>DELETE</code>, or shell execution.
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 2l-2 2m-1.5 1.5L16 7m-1.5 1.5L13 10m-1.5 1.5L10 13m-1.5 1.5L7 16m-1.5 1.5L4 19m-1.5 1.5L1 22">
+                                </path>
+                                <circle cx="15.5" cy="8.5" r="4.5"></circle>
+                            </svg>
+                        </div>
+                        <h3>3. Static Long-Lived Creds</h3>
+                        <p>
+                            Granting persistent master database passwords to autonomous agents creates unrevocable
+                            attack surfaces and unrestricted data modification risks.
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>4. Tamperable Compliance Logs</h3>
+                        <p>
+                            Plaintext logs can be silently deleted or modified, failing strict SOC2, HIPAA,
+                            GDPR, and ISO27001 audit verification requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The 4 Architectural Pillars -->
+        <section id="pillars" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Architecture</span>
+                    <h2 class="section-title">The 4 Pillars of KryptonMCP</h2>
+                    <p class="section-desc">
+                        A zero-overhead security and governance gateway positioned between AI orchestrators and backend systems.
+                    </p>
+                </div>
+
+                <div class="pillars-grid">
+                    <!-- Pillar 1 -->
+                    <div class="pillar-card">
+                        <div class="pillar-top">
+                            <div class="pillar-icon-wrap">🎭</div>
+                            <span class="pillar-badge-num">PILLAR 01</span>
+                        </div>
+                        <h3>Deterministic In-Flight PII Masking</h3>
+                        <ul class="pillar-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Reversible Surrogate Tokens:</strong> Replaces sensitive entities with
+                                    cryptographic references (<code>[EMAIL_REF_a1b2c3d4]</code>) before payloads reach
+                                    the LLM.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Algorithmic Validation:</strong> Luhn Mod 10 checksum validation, SSA area/serial checks, and zero false positives on code.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Ephemeral AES-256-GCM Vault:</strong> Surrogate mappings are encrypted
+                                    and held in RAM. Zero cleartext PII touches disk or cloud models.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Transparent In-Flight Detokenization:</strong> When the model references tokens in tool parameters, Krypton safely restores cleartext values before downstream execution.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="pillar-card">
+                        <div class="pillar-top">
+                            <div class="pillar-icon-wrap">🛡️</div>
+                            <span class="pillar-badge-num">PILLAR 02</span>
+                        </div>
+                        <h3>Multi-Vector Guardrails & Tool RBAC</h3>
+                        <ul class="pillar-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Injection & Jailbreak Defense:</strong> Real-time heuristic scoring against instruction overrides, DAN jailbreaks, Base64 obfuscation, and delimiter tags (<code>&lt;|im_start|&gt;</code>).</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Declarative Tool RBAC:</strong> Granular wildcard allowlists (<code>query_*</code>) and explicit denylists (<code>drop_*</code>, <code>delete_database</code>).</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Sliding-Window Rate Limiting:</strong> Halts runaway model execution loops, recursive tool calls, and token exhaustion attacks.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="pillar-card">
+                        <div class="pillar-top">
+                            <div class="pillar-icon-wrap">🔑</div>
+                            <span class="pillar-badge-num">PILLAR 03</span>
+                        </div>
+                        <h3>Just-In-Time (JIT) Ephemeral Credentials</h3>
+                        <ul class="pillar-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>On-Demand Micro-Credentials:</strong> Generates short-lived database and cache users with sub-hour TTLs instead of sharing static master passwords.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Automated Revocation:</strong> Supervisors terminate active connections (<code>pg_terminate_backend</code>, <code>CLIENT KILL USER</code>) and drop roles upon expiration.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Built-in Native Drivers:</strong> First-class support for <strong>PostgreSQL</strong> (<code>CREATE ROLE ... VALID UNTIL</code>) and <strong>Redis</strong> (<code>ACL SETUSER</code>).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="pillar-card">
+                        <div class="pillar-top">
+                            <div class="pillar-icon-wrap">🔏</div>
+                            <span class="pillar-badge-num">PILLAR 04</span>
+                        </div>
+                        <h3>Signed Merkle Audit Ledger</h3>
+                        <ul class="pillar-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>RFC 6962 Binary Merkle Tree:</strong> Immutable, append-only domain-separated Merkle tree hashing every request, response, tool call, and credential lease.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Ed25519 Asymmetric Signatures:</strong> Root checkpoints are cryptographically signed for non-repudiation and external audit verification.</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>CLI Verifier & Proofs:</strong> Auditors verify ledger integrity via <code>krypton audit verify</code> and export cryptographic inclusion proofs.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Before vs After Comparison -->
+        <section id="comparison" class="section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Payload Inspection</span>
+                    <h2 class="section-title">Before vs. After Krypton Gateway</h2>
+                    <p class="section-desc">
+                        Krypton intercepts sensitive database rows and transforms them into secure surrogate references.
+                    </p>
+                </div>
+
+                <div class="comparison-container">
+                    <!-- Before Box -->
+                    <div class="code-box danger">
+                        <div class="code-box-header">
+                            <div class="code-box-title">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                                </svg>
+                                <span>Direct Unprotected Connection</span>
+                            </div>
+                            <span class="code-badge danger">CRITICAL LEAKS</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="token-comment">// LLM receives raw cleartext database row:</span>
+{
+  "customer_name": "Alice Smith",
+  "email": <span class="token-leak">"alice.smith@corporate.com"</span>,
+  "credit_card": <span class="token-leak">"4532-0123-4567-8910"</span>,
+  "jwt_secret": <span class="token-leak">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."</span>
+}</code></pre>
+                        </div>
+                        <div class="code-box-footer">
+                            ⚠️ PII & secrets permanently leak into third-party LLM prompt contexts & training datasets.
+                        </div>
+                    </div>
+
+                    <!-- After Box -->
+                    <div class="code-box success">
+                        <div class="code-box-header">
+                            <div class="code-box-title">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Protected via Krypton Zero-Trust Gateway</span>
+                            </div>
+                            <span class="code-badge success">PROTECTED</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="token-comment">// LLM receives masked surrogate references:</span>
+{
+  "customer_name": "Alice Smith",
+  "email": <span class="token-masked">"[EMAIL_REF_d97c94b6]"</span>,
+  "credit_card": <span class="token-masked">"[CREDIT_CARD_REF_dea37a1a]"</span>,
+  "jwt_secret": <span class="token-masked">"[JWT_TOKEN_REF_f8e21a0c]"</span>
+}</code></pre>
+                        </div>
+                        <div class="code-box-footer">
+                            🛡️ Model operates normally. Parameters are transparently detokenized on tool execution. Zero PII leaves your infrastructure.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Performance Benchmarks -->
+        <section id="benchmarks" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Pure Go Speed</span>
+                    <h2 class="section-title">Microsecond Latency Benchmarks</h2>
+                    <p class="section-desc">
+                        Built in pure Go with zero CGO dependencies. Measured on Apple M2 (arm64, Go 1.26).
+                    </p>
+                </div>
+
+                <div class="benchmark-cards">
+                    <div class="bench-card">
+                        <div class="bench-metric">33.4 μs</div>
+                        <div class="bench-title">PII Masking & Tokenization</div>
+                        <div class="bench-sub">~30,000 ops / sec</div>
+                    </div>
+                    <div class="bench-card">
+                        <div class="bench-metric">30.3 μs</div>
+                        <div class="bench-title">Prompt Injection & Guardrails</div>
+                        <div class="bench-sub">~33,000 ops / sec</div>
+                    </div>
+                    <div class="bench-card">
+                        <div class="bench-metric">489 μs</div>
+                        <div class="bench-title">RFC 6962 Merkle Append</div>
+                        <div class="bench-sub">~2,000 ops / sec</div>
+                    </div>
+                    <div class="bench-card">
+                        <div class="bench-metric">550 μs</div>
+                        <div class="bench-title">End-to-End Pipeline</div>
+                        <div class="bench-sub">~1,800 ops / sec</div>
+                    </div>
+                </div>
+
+                <div class="bench-table-wrapper">
+                    <table class="bench-table">
+                        <thead>
+                            <tr>
+                                <th>Operation / Security Layer</th>
+                                <th>Throughput</th>
+                                <th>Latency / Op</th>
+                                <th>Memory Allocs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>In-Flight PII Masking & Tokenization</strong></td>
+                                <td class="mono-col">~30,000 ops/sec</td>
+                                <td class="highlight-col">33.4 μs / op</td>
+                                <td class="mono-col">20 allocs / op</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prompt Injection & Guardrail Scan</strong></td>
+                                <td class="mono-col">~33,000 ops/sec</td>
+                                <td class="highlight-col">30.3 μs / op</td>
+                                <td class="mono-col">3 allocs / op</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RFC 6962 Merkle Tree Leaf Append</strong></td>
+                                <td class="mono-col">~2,000 ops/sec</td>
+                                <td class="highlight-col">489 μs / op</td>
+                                <td class="mono-col">5,074 allocs / op</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Full Gateway Pipeline End-to-End</strong></td>
+                                <td class="mono-col">~1,800 ops/sec</td>
+                                <td class="highlight-col">550 μs / op</td>
+                                <td class="mono-col">5,110 allocs / op</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Universal Integration Matrix -->
+        <section id="integrations" class="section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Integration</span>
+                    <h2 class="section-title">Universal Compatibility Matrix</h2>
+                    <p class="section-desc">
+                        Wraps any standard MCP server or client without modifying upstream source code.
+                    </p>
+                </div>
+
+                <div class="integration-grid">
+                    <div class="integration-card">
+                        <div class="integration-card-header">
+                            <h3 class="integration-card-title">Claude Desktop</h3>
+                            <span class="transport-tag">Stdio Proxy</span>
+                        </div>
+                        <p style="font-size: 0.88rem; margin-bottom: 12px;">Wrap target servers in your <code>claude_desktop_config.json</code>.</p>
+                        <div class="integration-code">
+                            krypton start -- npx @modelcontextprotocol/server-postgres ...
+                        </div>
+                    </div>
+
+                    <div class="integration-card">
+                        <div class="integration-card-header">
+                            <h3 class="integration-card-title">Cursor / Windsurf</h3>
+                            <span class="transport-tag">Stdio / SSE</span>
+                        </div>
+                        <p style="font-size: 0.88rem; margin-bottom: 12px;">Attach transparent gateway to <code>.cursor/mcp.json</code>.</p>
+                        <div class="integration-code">
+                            {"command": "krypton", "args": ["start", "--config", "krypton.yaml"]}
+                        </div>
+                    </div>
+
+                    <div class="integration-card">
+                        <div class="integration-card-header">
+                            <h3 class="integration-card-title">LangChain / AutoGen</h3>
+                            <span class="transport-tag">HTTP / SSE</span>
+                        </div>
+                        <p style="font-size: 0.88rem; margin-bottom: 12px;">Connect over HTTP proxy with live <code>/health</code> and <code>/ready</code> probes.</p>
+                        <div class="integration-code">
+                            http://localhost:8080/sse
+                        </div>
+                    </div>
+
+                    <div class="integration-card">
+                        <div class="integration-card-header">
+                            <h3 class="integration-card-title">Docker & Kubernetes</h3>
+                            <span class="transport-tag">Container</span>
+                        </div>
+                        <p style="font-size: 0.88rem; margin-bottom: 12px;">Deploy as a sidecar container inside your cluster pods.</p>
+                        <div class="integration-code">
+                            docker run -p 8080:8080 ghcr.io/muhammetemirerkut/krypton-mcp:latest
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Quickstart in 30 Seconds -->
+        <section id="quickstart" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Installation</span>
+                    <h2 class="section-title">Quickstart in 30 Seconds</h2>
+                    <p class="section-desc">
+                        Get Krypton up and running with a single binary or container command.
+                    </p>
+                </div>
+
+                <div class="quickstart-box">
+                    <div class="qs-header">
+                        <div class="qs-tabs">
+                            <button class="qs-tab active" onclick="switchTab('go')">Go Install</button>
+                            <button class="qs-tab" onclick="switchTab('docker')">Docker</button>
+                            <button class="qs-tab" onclick="switchTab('binary')">CLI / Verify</button>
+                        </div>
+                        <button class="copy-btn" id="qs-copy-btn" onclick="copyQuickstartCode()">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span id="copy-btn-text">Copy All</span>
+                        </button>
+                    </div>
+
+                    <div class="qs-body">
+                        <div id="tab-content-go">
+                            <div class="qs-code-line"><span class="qs-comment"># 1. Install via Go (Zero dependencies)</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">go install github.com/krypton-mcp/krypton/cmd/krypton@v0.1.0-alpha</span></div>
+                            <div class="qs-code-line" style="margin-top: 8px;"><span class="qs-comment"># 2. Initialize production config and cryptographic audit keys</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">krypton config init --out krypton.yaml</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">krypton audit keygen --out-dir ./security-keys</span></div>
+                            <div class="qs-code-line" style="margin-top: 8px;"><span class="qs-comment"># 3. Launch transparent security gateway</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">krypton start --config krypton.yaml --dry-run</span></div>
+                        </div>
+
+                        <div id="tab-content-docker" style="display: none;">
+                            <div class="qs-code-line"><span class="qs-comment"># Pull production image from GitHub Container Registry</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">docker pull ghcr.io/muhammetemirerkut/krypton-mcp:latest</span></div>
+                            <div class="qs-code-line" style="margin-top: 8px;"><span class="qs-comment"># Run containerized gateway with mounted config</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">docker run -p 8080:8080 -v $(pwd)/krypton.yaml:/etc/krypton/krypton.yaml ghcr.io/muhammetemirerkut/krypton-mcp:latest</span></div>
+                        </div>
+
+                        <div id="tab-content-binary" style="display: none;">
+                            <div class="qs-code-line"><span class="qs-comment"># Verify Merkle ledger integrity</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">krypton audit verify --ledger ./audit.db --public-key ./security-keys/ed25519.pub</span></div>
+                            <div class="qs-code-line" style="margin-top: 8px;"><span class="qs-comment"># Export cryptographic inclusion proof for a request leaf</span></div>
+                            <div class="qs-code-line"><span class="qs-cmd">krypton audit proof --leaf-index 42 --out proof.json</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Drop-in AI Integration Prompt -->
+        <section class="section alt-bg">
+            <div class="container">
+                <div class="ai-box">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                        <span class="ai-box-badge">🤖 AGENT INTEGRATION MASTER PROMPT</span>
+                        <a href="https://github.com/MuhammetEmirErkut/krypton-mcp/blob/main/KRYPTON_INTEGRATION_PROMPT.md" target="_blank" rel="noopener noreferrer" style="font-size: 0.82rem; font-family: var(--font-mono); color: var(--accent-blue); display: inline-flex; align-items: center; gap: 6px;">
+                            <span>KRYPTON_INTEGRATION_PROMPT.md on GitHub</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <h3 class="ai-box-title">Instant Setup via Claude Code, Cursor, Windsurf & Antigravity</h3>
+                    <p style="font-size: 0.9rem; color: #475569; margin-bottom: 12px;">
+                        Copy the complete master prompt below into your AI Agent. It will automatically discover your MCP setup, generate <code>krypton.yaml</code>, initialize Ed25519 audit keys, and wrap all downstream database tools:
+                    </p>
+
+                    <div class="ai-prompt-area" id="ai-master-prompt"># 🛡️ KryptonMCP Integration Master Prompt
+
+> **Usage:** Copy the entire content of this file and paste it directly to any AI Agent (Claude Code, Cursor Composer, Windsurf, Antigravity, Cline, Copilot, etc.) in any external project that needs to integrate **KryptonMCP**.
+
+---
+
+# 🛡️ SYSTEM TASK: KryptonMCP Zero-Trust Security & Privacy Gateway Integration
+
+You are an expert DevSecOps and AI Systems Engineer. Your goal is to understand, install, configure, and integrate **KryptonMCP** into this codebase.
+
+---
+
+## 1. What is KryptonMCP? (Context & Architecture)
+
+**KryptonMCP** is a standalone, single-binary, zero-dependency **Zero-Trust Security & Privacy Gateway** designed for Model Context Protocol (MCP) clients (such as Claude Desktop, Cursor, Windsurf, LangChain, AutoGen) and downstream servers (PostgreSQL, Redis, GitHub, AWS, custom APIs).
+
+It sits transparently between the AI Client and Downstream MCP Servers:
+`[ AI Client (Claude / Cursor) ] &lt;───&gt; [ KryptonMCP Gateway ] &lt;───&gt; [ Downstream MCP Server / DB ]`
+
+### Core Security Subsystems:
+1. **🎭 In-Flight Deterministic PII Masking & Reversible Detokenization**:
+   - Outbound data from databases/APIs is scanned in-flight. PII (Emails, Credit Cards with Luhn check, SSNs, API Keys, JWTs, IPs, Phones) is replaced with surrogate tokens (`[EMAIL_REF_a1b2c3d4]`, `[CREDIT_CARD_REF_8f9e0a1b]`) before reaching the LLM.
+   - Values are stored in an in-memory session vault encrypted with **AES-256-GCM**.
+   - When the LLM issues a downstream tool call containing surrogate tokens, Krypton automatically detokenizes them back to cleartext before reaching the backend. The LLM never sees cleartext PII!
+2. **🛡️ Multi-Vector Prompt-Injection & Tool Execution Guardrails**:
+   - Detects and blocks instruction overrides, jailbreaks (DAN/developer mode), delimiter injections, and Base64-obfuscated attacks.
+   - Declarative Tool RBAC (allowlists/denylists like `query_*`, blocking `drop_*` or destructive shell tools).
+   - Argument validation (regex constraints, length, numeric bounds, rate limiting).
+3. **🔑 Just-In-Time (JIT) Ephemeral Credentials Broker**:
+   - Eliminates static long-lived database passwords for AI agents.
+   - Generates temporary micro-credentials with sub-hour TTLs for **PostgreSQL** (`CREATE ROLE ... VALID UNTIL`) and **Redis** (`ACL SETUSER`).
+   - Automatically revokes them and drops active sessions upon expiration. Exposes native MCP tools: `krypton_request_credential`, `krypton_revoke_credential`, `krypton_list_leases`.
+4. **🔏 Cryptographically Signed RFC 6962 Merkle Audit Ledger**:
+   - Append-only binary Merkle tree recording every tool call, parameter, response, and credential lease in `audit.jsonl`.
+   - Signed using asymmetric **Ed25519** keys for tamper-evident SOC2/HIPAA/ISO27001 compliance. Verification via CLI: `krypton audit verify`.
+
+---
+
+## 2. Your Integration Mission
+
+Follow these steps sequentially to audit, configure, and integrate KryptonMCP into this project:
+
+### Step 1: Project Discovery & Architecture Audit
+1. Inspect the workspace for:
+   - Existing MCP configurations (e.g., `.cursor/mcp.json`, `claude_desktop_config.json`, `.vscode/`, `docker-compose.yml`, or agent configs).
+   - Database connections, API keys, or tools exposed to AI agents (Postgres, Redis, GitHub, REST APIs, etc.).
+   - Sensitive data flows that require PII masking or prompt injection protection.
+
+### Step 2: Binary Installation & Audit Key Generation
+1. Check if Go is installed (`go version`) or Docker is available.
+2. Provide / run the installation commands:
+   - **From Source**:
+     ```bash
+     git clone https://github.com/MuhammetEmirErkut/krypton-mcp.git /tmp/krypton-mcp
+     cd /tmp/krypton-mcp &amp;&amp; go build -o /usr/local/bin/krypton ./cmd/krypton
+     ```
+   - **Or Docker**: `ghcr.io/muhammetemirerkut/krypton-mcp:latest`
+3. Generate the cryptographic Ed25519 audit keypair for the project:
+   ```bash
+   krypton audit keygen --out-dir ./security/krypton-keys
+   ```
+
+### Step 3: Create `krypton.yaml` Configuration
+Create a production-ready `krypton.yaml` (or `./config/krypton.yaml`) tailored to this project:
+```yaml
+version: "v1"
+
+server:
+  transport: "stdio" # "stdio" for process proxy, "sse" for HTTP server
+  log_level: "info"
+
+security:
+  masking_enabled: true
+  guardrails_enabled: true
+  audit_enabled: true
+  ephemeral_creds_enabled: true
+
+masking:
+  mode: "tokenize" # "tokenize" (reversible via vault), "redact", or "hash"
+  builtin_rules:
+    - "email"
+    - "credit_card"
+    - "ssn"
+    - "api_key"
+    - "jwt"
+    - "phone"
+    - "ip_address"
+
+guardrails:
+  block_injection: true
+  max_prompt_size_bytes: 1048576 # 1 MB
+  # Tool RBAC policies
+  allowed_tools:
+    - "*"
+  denied_tools:
+    - "drop_*"
+    - "delete_database"
+    - "execute_raw_shell"
+
+audit:
+  log_path: "./logs/krypton-audit.jsonl"
+  sign_enabled: true
+  signing_key_path: "./security/krypton-keys/krypton_audit.key"
+  public_key_path: "./security/krypton-keys/krypton_audit.pub"
+```
+
+Validate the config:
+```bash
+krypton config validate --config ./krypton.yaml
+```
+
+### Step 4: Client & Tool Proxy Wiring
+Wrap existing downstream MCP servers with `krypton start --config &lt;path&gt; -- &lt;downstream_command&gt; &lt;args&gt;`.
+
+#### A. Cursor IDE (`.cursor/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "secure-db-gateway": {
+      "command": "krypton",
+      "args": [
+        "start",
+        "--config", "./krypton.yaml",
+        "--",
+        "npx", "-y", "@modelcontextprotocol/server-postgres", "postgresql://user:pass@localhost:5432/dbname"
+      ]
+    }
+  }
+}
+```
+
+#### B. Claude Desktop (`claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "secure-gateway": {
+      "command": "/usr/local/bin/krypton",
+      "args": [
+        "start",
+        "--config", "/absolute/path/to/krypton.yaml",
+        "--",
+        "&lt;your-downstream-mcp-server-command&gt;"
+      ]
+    }
+  }
+}
+```
+
+#### C. Docker Compose / Backend Service (if applicable):
+Add Krypton as a secure sidecar or standalone gateway container.
+
+### Step 5: Verification & Tamper-Proof Audit Check
+1. Start the gateway and execute a test tool call (e.g. retrieving records with mock PII like email/credit card).
+2. Confirm the AI client only receives `[EMAIL_REF_...]` / `[CREDIT_CARD_REF_...]` tokens.
+3. Test a tool call utilizing the surrogate token to verify transparent reverse detokenization.
+4. Verify Merkle ledger integrity:
+   ```bash
+   krypton audit verify --log-file ./logs/krypton-audit.jsonl --public-key ./security/krypton-keys/krypton_audit.pub
+   ```
+
+---
+
+## 3. Output Expected from You
+
+1. **Audit Summary**: Identify which MCP servers / databases in this project should be protected by Krypton.
+2. **Files Created/Modified**: Show the exact `krypton.yaml`, audit keys location, and updated MCP client configuration files.
+3. **Verification Guide**: Provide exact CLI commands to run and verify that PII masking, guardrails, and signed audit logging are fully functional.</div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button class="btn btn-primary btn-sm" onclick="copyAIPrompt()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span id="ai-copy-text">Copy Full Master Prompt</span>
+                        </button>
+                        <a href="https://github.com/MuhammetEmirErkut/krypton-mcp/blob/main/KRYPTON_INTEGRATION_PROMPT.md" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>Open on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: CTA Banner -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <img src="../assets/krypton_logo.png" alt="Krypton Shield" style="width: 56px; height: 56px; margin-bottom: 16px; border-radius: 10px; border: 1px solid #e2e8f0;">
+                    <h2>Secure Your AI Workflows Today</h2>
+                    <p>
+                        Zero-trust protection, sub-millisecond overhead, and verifiable cryptographic compliance for autonomous AI agents.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                        <a href="https://github.com/MuhammetEmirErkut/krypton-mcp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            ⭐ Star on GitHub
+                        </a>
+                        <a href="#quickstart" class="btn btn-blue">
+                            Quickstart in 30s
+                        </a>
+                        <a href="../index.html" class="btn btn-secondary">
+                            ← Main Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo-wrap">
+                    <img src="../assets/krypton_logo.png" alt="Krypton Logo" style="width: 26px; height: 26px; border-radius: 6px;">
+                    <span class="footer-brand">Krypton<span class="brand-accent">MCP</span></span>
+                </div>
+
+                <ul class="footer-nav">
+                    <li><a href="https://github.com/MuhammetEmirErkut/krypton-mcp" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://github.com/MuhammetEmirErkut/krypton-mcp/blob/main/KRYPTON_INTEGRATION_PROMPT.md" target="_blank" rel="noopener noreferrer">Integration Prompt</a></li>
+                    <li><a href="https://github.com/MuhammetEmirErkut/krypton-mcp/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Apache 2.0 License</a></li>
+                    <li><a href="https://github.com/MuhammetEmirErkut/krypton-mcp/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Security Policy</a></li>
+                    <li><a href="mailto:muhammetemir.erkut@gmail.com">Contact Maintainer</a></li>
+                    <li><a href="../index.html">Main Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Muhammet Emir Erkut. Open-source under Apache License 2.0.</span>
+                <span>Maintained by <a href="https://github.com/MuhammetEmirErkut" target="_blank" rel="noopener noreferrer">Muhammet Emir Erkut</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        const quickstartSnippets = {
+            go: `# 1. Install via Go (Zero dependencies)
+go install github.com/krypton-mcp/krypton/cmd/krypton@v0.1.0-alpha
+
+# 2. Initialize production config and cryptographic audit keys
+krypton config init --out krypton.yaml
+krypton audit keygen --out-dir ./security-keys
+
+# 3. Launch transparent security gateway
+krypton start --config krypton.yaml --dry-run`,
+            docker: `# Pull production image from GitHub Container Registry
+docker pull ghcr.io/muhammetemirerkut/krypton-mcp:latest
+
+# Run containerized gateway with mounted config
+docker run -p 8080:8080 -v $(pwd)/krypton.yaml:/etc/krypton/krypton.yaml ghcr.io/muhammetemirerkut/krypton-mcp:latest`,
+            binary: `# Verify Merkle ledger integrity
+krypton audit verify --ledger ./audit.db --public-key ./security-keys/ed25519.pub
+
+# Export cryptographic inclusion proof for a request leaf
+krypton audit proof --leaf-index 42 --out proof.json`
+        };
+
+        let currentTab = 'go';
+
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.qs-tab').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.getElementById('tab-content-go').style.display = tab === 'go' ? 'block' : 'none';
+            document.getElementById('tab-content-docker').style.display = tab === 'docker' ? 'block' : 'none';
+            document.getElementById('tab-content-binary').style.display = tab === 'binary' ? 'block' : 'none';
+        }
+
+        function copyQuickstartCode() {
+            const code = quickstartSnippets[currentTab];
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('qs-copy-btn');
+                const text = document.getElementById('copy-btn-text');
+                btn.classList.add('copied');
+                text.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    text.textContent = 'Copy All';
+                }, 2000);
+            });
+        }
+
+        function copyAIPrompt() {
+            const promptText = document.getElementById('ai-master-prompt').innerText;
+            navigator.clipboard.writeText(promptText).then(() => {
+                const btnText = document.getElementById('ai-copy-text');
+                btnText.textContent = 'Copied to Clipboard!';
+                setTimeout(() => {
+                    btnText.textContent = 'Copy Prompt to Clipboard';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -19,6 +19,12 @@
     --accent-lift-hover: #3730a3;
     --pink-lift: #db2777;
     
+    /* App 3: KryptonMCP Accent */
+    --accent-krypton: #0284c7;
+    --accent-krypton-hover: #0369a1;
+    --cyan-krypton: #38bdf8;
+    --dark-krypton: #090d16;
+    
     --border: rgba(44, 38, 28, 0.08);
     --border-hover: rgba(44, 38, 28, 0.15);
     
@@ -818,6 +824,163 @@ footer {
     background-color: rgba(79, 70, 229, 0.06);
     color: var(--accent-lift);
 }
+.tech-badge.krypton {
+    background-color: rgba(2, 132, 199, 0.08);
+    color: var(--accent-krypton);
+}
 
+/* Krypton Project Showcase Styling */
+.app-icon-wrapper.krypton-clean {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.krypton-logo-big {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 14px rgba(2, 132, 199, 0.3));
+    transition: transform 0.3s ease;
+}
 
+.showcase-card:hover .krypton-logo-big {
+    transform: scale(1.06);
+}
+
+.app-category.krypton {
+    color: var(--accent-krypton);
+}
+
+.feature-item.krypton svg {
+    stroke: var(--accent-krypton);
+}
+
+.btn-action.primary.krypton {
+    border-color: var(--accent-krypton);
+    background-color: var(--accent-krypton);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(2, 132, 199, 0.2);
+}
+
+.btn-action.primary.krypton:hover {
+    background-color: transparent;
+    color: var(--accent-krypton);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-action.secondary.krypton {
+    border-color: var(--border-hover);
+    background-color: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-action.secondary.krypton:hover {
+    border-color: var(--accent-krypton);
+    background-color: rgba(2, 132, 199, 0.06);
+    color: var(--accent-krypton);
+    transform: translateY(-2px);
+}
+
+/* Server Terminal Mockup (Desktop / Server Tool) */
+.terminal-mockup {
+    width: 100%;
+    max-width: 440px;
+    background: #090d16;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.35);
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+    text-align: left;
+}
+
+.terminal-mockup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-mockup-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-mockup-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.terminal-mockup-dot.red { background: #f43f5e; }
+.terminal-mockup-dot.yellow { background: #f59e0b; }
+.terminal-mockup-dot.green { background: #10b981; }
+
+.terminal-mockup-title {
+    font-size: 0.74rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.terminal-mockup-badge {
+    font-size: 0.65rem;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.terminal-mockup-body {
+    padding: 16px;
+    color: #e2e8f0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.terminal-mockup-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 0.76rem;
+}
+
+.terminal-mockup-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+}
+
+.terminal-mockup-row:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-mockup-btn {
+    display: block;
+    text-align: center;
+    background: #0284c7;
+    color: #ffffff;
+    padding: 9px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 12px;
+    transition: background 0.2s ease;
+}
+
+.terminal-mockup-btn:hover {
+    background: #0369a1;
+    color: #ffffff;
+}
