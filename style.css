@@ -815,6 +815,7 @@ footer {
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 .tech-badge.komisyon {
     background-color: rgba(46, 79, 79, 0.06);
@@ -830,24 +831,42 @@ footer {
 }
 
 /* Krypton Project Showcase Styling */
+#krypton.showcase-card {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+}
+
+#krypton .showcase-content {
+    min-width: 0;
+}
+
+#krypton .showcase-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
 .app-icon-wrapper.krypton {
-    width: 48px;
-    height: 48px;
-    background: transparent;
-    box-shadow: none;
+    width: 64px;
+    height: 64px;
+    background: #ffffff;
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 16px;
 }
 
 .krypton-logo-img {
-    width: 44px;
-    height: 44px;
-    max-width: 44px;
-    max-height: 44px;
+    width: 42px;
+    height: 42px;
+    max-width: 42px;
+    max-height: 42px;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 2px 8px rgba(2, 132, 199, 0.25));
 }
 
 .app-category.krypton {
@@ -888,12 +907,12 @@ footer {
 /* Krypton Demo GIF Container on Home */
 .krypton-demo-wrapper {
     width: 100%;
-    max-width: 460px;
-    border-radius: 12px;
+    max-width: 440px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(15, 23, 42, 0.2);
-    background: #000000;
+    box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.35);
+    border: 1px solid rgba(15, 23, 42, 0.15);
+    background: #090d16;
 }
 
 .krypton-demo-gif {
@@ -901,3 +920,4 @@ footer {
     height: auto;
     display: block;
 }
+
