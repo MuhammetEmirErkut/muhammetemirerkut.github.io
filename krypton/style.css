@@ -64,6 +64,11 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -72,7 +77,10 @@ body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
+    width: 100%;
+    max-width: 100vw;
     overflow-x: hidden;
+    position: relative;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -1453,7 +1461,7 @@ pre code {
 
     /* Base Typography */
     body {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     /* Navbar on small phones */
@@ -1462,13 +1470,13 @@ pre code {
     }
 
     .nav-brand {
-        font-size: 1.05rem;
+        font-size: 1.12rem;
         gap: 8px;
     }
 
     .nav-logo {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
     }
 
     .nav-actions {
@@ -1480,35 +1488,49 @@ pre code {
     }
 
     #nav-github-star {
-        padding: 6px 9px;
+        padding: 7px 10px;
     }
 
     .nav-actions .btn-sm {
-        padding: 6px 10px;
-        font-size: 0.78rem;
+        padding: 7px 12px;
+        font-size: 0.82rem;
     }
 
     /* Hero */
     .hero {
-        padding: 32px 0 24px;
+        padding: 36px 0 28px;
     }
 
     .hero-pill {
-        font-size: 0.74rem;
-        padding: 4px 10px;
-        margin-bottom: 18px;
+        font-size: 0.8rem;
+        padding: 6px 14px;
+        margin-bottom: 20px;
         white-space: normal;
-        line-height: 1.35;
+        line-height: 1.4;
         max-width: 100%;
     }
 
     .hero-title {
-        font-size: 1.75rem;
+        font-size: clamp(2rem, 7.5vw, 2.35rem);
+        line-height: 1.22;
         letter-spacing: -0.02em;
+        margin-bottom: 16px;
     }
 
     .hero-subtitle {
-        font-size: 0.92rem;
+        font-size: 1.02rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .badge-grid {
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+
+    .feature-tag {
+        font-size: 0.8rem;
+        padding: 6px 11px;
     }
 
     .hero-ctas {
@@ -1516,60 +1538,60 @@ pre code {
         width: 100%;
         max-width: 320px;
         margin: 0 auto 32px;
-        gap: 8px;
+        gap: 10px;
     }
 
     .hero-ctas .btn {
         width: 100%;
-        padding: 11px 16px;
-        font-size: 0.9rem;
+        padding: 13px 18px;
+        font-size: 0.95rem;
     }
 
     /* Section padding */
     .section {
-        padding: 40px 0;
+        padding: 44px 0;
     }
 
     .section-header {
-        margin-bottom: 24px;
+        margin-bottom: 28px;
     }
 
     .section-title {
-        font-size: 1.45rem;
+        font-size: 1.6rem;
     }
 
     .section-desc {
-        font-size: 0.88rem;
+        font-size: 0.95rem;
     }
 
     /* Problem Cards */
     .problem-card {
-        padding: 18px 14px;
+        padding: 20px 16px;
     }
 
     .problem-card h3 {
-        font-size: 1.02rem;
+        font-size: 1.1rem;
     }
 
     .problem-card p {
-        font-size: 0.86rem;
+        font-size: 0.9rem;
     }
 
     /* Pillars */
     .pillar-card {
-        padding: 18px 14px;
+        padding: 20px 16px;
     }
 
     .pillar-card h3 {
-        font-size: 1.08rem;
+        font-size: 1.15rem;
     }
 
     .pillar-list {
-        gap: 8px;
+        gap: 10px;
     }
 
     .pillar-list li {
-        font-size: 0.84rem;
+        font-size: 0.88rem;
     }
 
     /* Code Comparison */
@@ -1579,46 +1601,46 @@ pre code {
     }
 
     .code-content {
-        padding: 12px 10px;
-        font-size: 0.74rem;
+        padding: 14px 12px;
+        font-size: 0.76rem;
     }
 
     .code-content pre code {
-        font-size: 0.74rem;
+        font-size: 0.76rem;
     }
 
     .code-box-footer {
-        font-size: 0.74rem;
-        padding: 8px 10px;
+        font-size: 0.76rem;
+        padding: 10px 12px;
     }
 
     /* Benchmarks */
     .benchmark-cards {
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        gap: 10px;
     }
 
     .bench-card {
-        padding: 12px 8px;
+        padding: 14px 10px;
     }
 
     .bench-metric {
-        font-size: 1.35rem;
+        font-size: 1.45rem;
     }
 
     .bench-title {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .bench-sub {
-        font-size: 0.68rem;
+        font-size: 0.72rem;
     }
 
     /* Quickstart */
     .qs-header {
         flex-wrap: wrap;
         gap: 8px;
-        padding: 8px 10px;
+        padding: 10px 12px;
     }
 
     .qs-tabs {
@@ -1628,39 +1650,39 @@ pre code {
     }
 
     .qs-tab {
-        padding: 4px 8px;
-        font-size: 0.72rem;
+        padding: 5px 10px;
+        font-size: 0.76rem;
         white-space: nowrap;
     }
 
     .copy-btn {
         width: 100%;
         justify-content: center;
-        padding: 6px 10px;
+        padding: 7px 12px;
     }
 
     .qs-body {
-        padding: 12px 10px;
+        padding: 14px 12px;
     }
 
     .qs-code-line {
-        font-size: 0.72rem;
-        line-height: 1.6;
+        font-size: 0.76rem;
+        line-height: 1.65;
     }
 
     /* AI Master Prompt Box */
     .ai-box {
-        padding: 18px 14px;
+        padding: 20px 16px;
     }
 
     .ai-box-title {
-        font-size: 1.05rem;
+        font-size: 1.12rem;
     }
 
     .ai-prompt-area {
-        font-size: 0.72rem;
-        padding: 10px;
-        max-height: 280px;
+        font-size: 0.75rem;
+        padding: 12px;
+        max-height: 300px;
     }
 
     .ai-box-actions {
@@ -1673,53 +1695,54 @@ pre code {
     .ai-box-actions .btn {
         width: 100%;
         justify-content: center;
-        padding: 10px 14px;
+        padding: 11px 16px;
     }
 
     /* CTA Banner */
     .cta-banner {
-        padding: 28px 16px;
+        padding: 32px 18px;
     }
 
     .cta-logo {
-        width: 52px;
-        height: 52px;
-        margin-bottom: 16px;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 18px;
     }
 
     .cta-banner h2 {
-        font-size: 1.4rem;
+        font-size: 1.55rem;
     }
 
     .cta-banner p {
-        font-size: 0.88rem;
-        margin-bottom: 18px;
+        font-size: 0.94rem;
+        margin-bottom: 20px;
     }
 
     .cta-actions {
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 8px;
+        gap: 10px;
     }
 
     .cta-actions .btn {
         width: 100%;
         justify-content: center;
-        padding: 11px 16px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
     }
 
     /* Footer */
     .footer {
-        padding: 32px 0 20px;
+        padding: 36px 0 24px;
     }
 
     .footer-nav {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
     }
 
     .footer-bottom {
-        font-size: 0.75rem;
+        font-size: 0.78rem;
     }
 }
