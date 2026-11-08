@@ -6,398 +6,516 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="description"
         content="Muhammet Emir Erkut - Software Engineer & Product Creator. Explore KryptonMCP, CareerLift, and Komisyon 101.">
+    <meta name="author" content="Muhammet Emir Erkut">
+    <meta name="theme-color" content="#fdfbf7">
     <title>Muhammet Emir Erkut — Software Engineer & Product Showcase</title>
+    <link rel="canonical" href="https://muhammetemirerkut.com/">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muhammetemirerkut.com/">
+    <meta property="og:title" content="Muhammet Emir Erkut — Software Engineer & Product Creator">
+    <meta property="og:description"
+        content="Native iOS apps and open-source security tooling for AI agents: KryptonMCP, CareerLift, and Komisyon 101.">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Icon Sprite (referenced via <use href="#i-...">) -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-check" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12" />
+        </symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+        </symbol>
+        <symbol id="i-arrow-down" viewBox="0 0 24 24">
+            <path d="M12 5v14M6 13l6 6 6-6" />
+        </symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="22 6 12 13 2 6" />
+        </symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <polyline points="12 7 12 12 15.5 14" />
+        </symbol>
+        <symbol id="i-careerlift" viewBox="0 0 24 24">
+            <path
+                d="M4.5 16.5c-1.5 1.5-2.5 3.5-2.5 5.5C4 22 6 21 7.5 19.5M22 2s-6.5.5-10.5 4.5S6 13 6 13s3.5-.5 5.5-2.5S16 6 16 6s.5 4.5 4.5 4.5S22 2 22 2z" />
+        </symbol>
+        <symbol id="i-komisyon" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="4" />
+            <line x1="8" y1="9" x2="16" y2="9" />
+            <line x1="8" y1="15" x2="16" y2="15" />
+            <line x1="12" y1="9" x2="12" y2="15" />
+        </symbol>
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path fill="currentColor" stroke="none"
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </symbol>
+        <symbol id="i-apple" viewBox="0 0 24 24">
+            <path fill="currentColor" stroke="none"
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 2.99 1.11.09 2.27-.58 3-1.43z" />
+        </symbol>
+        <symbol id="i-status" viewBox="0 0 66 12">
+            <g fill="currentColor" stroke="none">
+                <rect x="0" y="8" width="3" height="4" rx="0.8" />
+                <rect x="4.5" y="5.5" width="3" height="6.5" rx="0.8" />
+                <rect x="9" y="3" width="3" height="9" rx="0.8" />
+                <rect x="13.5" y="0.5" width="3" height="11.5" rx="0.8" />
+                <circle cx="29" cy="10.3" r="1.5" />
+                <rect x="43" y="2.5" width="17" height="7" rx="1.6" />
+                <path d="M63.4 4.2v3.6a1.9 1.9 0 0 0 0-3.6z" opacity="0.45" />
+            </g>
+            <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M22.4 4.4a9.4 9.4 0 0 1 13.2 0" />
+                <path d="M25.1 7.2a5.5 5.5 0 0 1 7.8 0" />
+            </g>
+            <rect x="41" y="0.75" width="21" height="10.5" rx="3.2" fill="none" stroke="currentColor"
+                stroke-opacity="0.45" stroke-width="1" />
+        </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Header & Navigation -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                Muhammet Emir<span>Erkut</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
-            </nav>
-            <a href="mailto:muhammetemir.erkut@gmail.com" class="btn-contact">
-                Get in Touch
-            </a>
+    <header class="site-header">
+        <div class="container nav">
+            <a href="#" class="logo">Muhammet Emir<span>Erkut</span></a>
+            <div class="nav-right">
+                <nav aria-label="Primary">
+                    <ul class="nav-links">
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="https://github.com/MuhammetEmirErkut" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </nav>
+                <a href="#contact" class="btn btn-ink btn-sm">Get in Touch</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Muhammet Emir Erkut</h1>
-            <p>Software Engineer & Product Creator. Explore my engineering projects and applications below.</p>
-        </div>
-    </section>
+    <main id="main" tabindex="-1">
 
-    <!-- Showcase Section for alternating Apps -->
-    <section id="projects" class="container showcase-section">
-        <h2 class="section-label">Featured Projects & Products</h2>
-
-        <!-- App 1: KryptonMCP (Flagship Open Source) -->
-        <div id="krypton" class="showcase-card">
-            <div class="showcase-content">
-                <div class="app-meta">
-                    <div class="app-icon-wrapper krypton">
-                        <img src="assets/krypton_logo.png" alt="Krypton Logo" class="krypton-logo-img">
-                    </div>
-                    <span class="app-category krypton">AI & Cybersecurity</span>
-                </div>
-
-                <h2>KryptonMCP</h2>
-                <p class="app-tagline">Zero-Trust AI Security & Privacy Gateway</p>
-                <p class="app-description">KryptonMCP is a high-performance pure Go security gateway for Model Context Protocol (MCP) tool pipelines, providing in-flight PII masking (~33μs), prompt injection guardrails, ephemeral database credentials, and cryptographic RFC 6962 Merkle audit logging.</p>
-                <div class="tech-badges">
-                    <span class="tech-badge krypton">Pure Go</span>
-                    <span class="tech-badge krypton">Model Context Protocol</span>
-                    <span class="tech-badge krypton">In-Flight PII Masking</span>
-                    <span class="tech-badge krypton">RFC 6962 Merkle</span>
-                    <span class="tech-badge krypton">Apache 2.0</span>
-                </div>
-
-                <div class="features-list">
-                    <div class="feature-item krypton">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        ~33μs In-Flight PII Masking
-                    </div>
-                    <div class="feature-item krypton">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Prompt Injection Guardrails
-                    </div>
-                    <div class="feature-item krypton">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        JIT Ephemeral DB Credentials
-                    </div>
-                    <div class="feature-item krypton">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Signed Merkle Audit Ledger
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Software Engineer & Product Creator</p>
+                    <h1>Muhammet Emir <span>Erkut</span></h1>
+                    <p class="hero-lead">I design and ship native iOS apps and <span class="nowrap">open-source</span> security tooling for AI agents.</p>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn btn-ink">
+                            <span>See my work</span>
+                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down" /></svg>
+                        </a>
+                        <a href="https://github.com/MuhammetEmirErkut" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                            <span>GitHub</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="app-actions">
-                    <a href="krypton/" class="btn-action primary krypton" id="krypton-landing">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                        <span>Explore Krypton Gateway</span>
-                    </a>
-                    <a href="https://github.com/MuhammetEmirErkut/krypton-mcp" target="_blank" rel="noopener noreferrer" class="btn-action secondary krypton" id="krypton-github">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        <span>GitHub Repository</span>
-                    </a>
-                </div>
+                <!-- Project Index -->
+                <nav class="hero-index" aria-labelledby="index-title">
+                    <div class="index-head">
+                        <h2 id="index-title">Projects</h2>
+                        <span class="index-count" aria-hidden="true">03</span>
+                    </div>
+                    <ol class="index-list">
+                        <li>
+                            <a href="#krypton" class="index-item tone-krypton">
+                                <span class="index-icon index-icon--logo">
+                                    <img src="assets/krypton_logo_256.png" alt="" width="46" height="46">
+                                </span>
+                                <span class="index-text">
+                                    <span class="index-name">KryptonMCP <span class="index-tag">Open source</span></span>
+                                    <span class="index-desc">Zero-trust security gateway for AI agents</span>
+                                </span>
+                                <svg class="icon index-arrow" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#careerlift" class="index-item tone-lift">
+                                <span class="index-icon">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-careerlift" /></svg>
+                                </span>
+                                <span class="index-text">
+                                    <span class="index-name">CareerLift <span class="index-tag">App Store</span></span>
+                                    <span class="index-desc">AI-powered job application assistant</span>
+                                </span>
+                                <svg class="icon index-arrow" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#komisyon" class="index-item tone-komisyon">
+                                <span class="index-icon">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-komisyon" /></svg>
+                                </span>
+                                <span class="index-text">
+                                    <span class="index-name">Komisyon 101 <span class="index-tag">App Store</span></span>
+                                    <span class="index-desc">POS commission & revenue calculator</span>
+                                </span>
+                                <svg class="icon index-arrow" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
             </div>
+        </section>
 
-            <div class="showcase-preview">
-                <div class="krypton-demo-wrapper">
-                    <img src="assets/krypton_demo.gif" alt="Krypton MCP Demo" class="krypton-demo-gif">
-                </div>
-            </div>
-        </div>
-
-        <!-- App 2: CareerLift -->
-        <div id="careerlift" class="showcase-card reverse">
-            <div class="showcase-content">
-                <div class="app-meta">
-                    <div class="app-icon-wrapper lift">
-                        <!-- Custom soaring rocket / career lift SVG -->
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M4.5 16.5c-1.5 1.5-2.5 3.5-2.5 5.5C4 22 6 21 7.5 19.5M22 2s-6.5.5-10.5 4.5S6 13 6 13s3.5-.5 5.5-2.5S16 6 16 6s.5 4.5 4.5 4.5S22 2 22 2z"
-                                fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
+        <!-- Showcase Section -->
+        <section id="work" class="work" aria-labelledby="work-title">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Selected work</p>
+                        <h2 id="work-title">Featured Projects & Products</h2>
                     </div>
-                    <span class="app-category lift">Career & Productivity</span>
+                    <p>From open-source infrastructure to native apps on the App Store.</p>
                 </div>
 
-                <h2>CareerLift</h2>
-                <p class="app-tagline">AI-Powered Job Application & Career Assistant</p>
-                <p class="app-description">CareerLift is an intelligent career assistant that organizes job applications in one place, manages interview prep pipelines, and optimizes resume writing workflows with AI assistance.</p>
-                <div class="tech-badges">
-                    <span class="tech-badge lift">Swift</span>
-                    <span class="tech-badge lift">SwiftUI</span>
-                    <span class="tech-badge lift">AI Integration</span>
-                    <span class="tech-badge lift">CoreData</span>
-                </div>
+                <div class="projects">
 
-                <div class="features-list">
-                    <div class="feature-item lift">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Resume Scoring Engine
-                    </div>
-                    <div class="feature-item lift">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Smart Application Tracker
-                    </div>
-                    <div class="feature-item lift">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Interview Prep Guide
-                    </div>
-                    <div class="feature-item lift">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Career Growth Analytics
-                    </div>
-                </div>
-
-                <div class="app-actions">
-                    <a href="https://apps.apple.com/tr/app/careerlift/id6754268399?l=en" target="_blank" rel="noopener noreferrer" class="btn-action primary lift" id="careerlift-appstore">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 2.99 1.11.09 2.27-.58 3-1.43z" />
-                        </svg>
-                        <span>Download on App Store</span>
-                    </a>
-                    <a href="career/" class="btn-action secondary lift" id="careerlift-legal">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                            <line x1="16" y1="13" x2="8" y2="13" />
-                            <line x1="16" y1="17" x2="8" y2="17" />
-                            <polyline points="10 9 9 9 8 9" />
-                        </svg>
-                        <span>Website & Support</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="showcase-preview">
-                <div class="device-mockup">
-                    <div class="device-notch"></div>
-                    <div class="device-screen lift">
-                        <div class="mock-ui-header">
-                            <span class="mock-ui-logo lift">CareerLift</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-lift)"
-                                stroke-width="2.5">
-                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                            </svg>
-                        </div>
-
-                        <div class="mock-ui-card">
-                            <span class="mock-ui-title">Profile Strength</span>
-                            <div class="mock-ui-value">88%</div>
-                        </div>
-
-                        <div class="mock-ui-list">
-                            <div class="mock-ui-list-item">
-                                <div class="mock-ui-badge green"></div>
-                                <div class="mock-ui-list-text">
-                                    <span>Google - Mobile Developer</span>
-                                    <span>Active Application - Interview</span>
+                    <!-- App 1: KryptonMCP (Flagship Open Source) -->
+                    <article id="krypton" class="project project--terminal tone-krypton" aria-labelledby="krypton-title">
+                        <div class="project-body">
+                            <div class="project-intro">
+                                <div class="project-meta">
+                                    <span class="project-icon project-icon--logo">
+                                        <img src="assets/krypton_logo_256.png" alt="" width="56" height="56" loading="lazy" decoding="async">
+                                    </span>
+                                    <p class="project-kicker">
+                                        <span class="project-category">AI & Cybersecurity</span>
+                                        <span class="project-platform">Open source · Apache 2.0</span>
+                                    </p>
                                 </div>
+
+                                <h3 id="krypton-title" class="project-title">KryptonMCP</h3>
+                                <p class="project-tagline">Zero-Trust AI Security & Privacy Gateway</p>
+                                <p class="project-desc">KryptonMCP is a high-performance pure Go security gateway for Model Context Protocol (MCP) tool pipelines, providing in-flight PII masking (~33μs), prompt injection guardrails, ephemeral database credentials, and cryptographic RFC 6962 Merkle audit logging.</p>
                             </div>
-                            <div class="mock-ui-list-item">
-                                <div class="mock-ui-badge blue"></div>
-                                <div class="mock-ui-list-text">
-                                    <span>Apple - iOS Architect</span>
-                                    <span>Resume Submitted</span>
+
+                            <div class="project-details">
+                                <ul class="project-stack" aria-label="Tech stack">
+                                    <li>Pure Go</li>
+                                    <li>Model Context Protocol</li>
+                                    <li>RFC 6962 Merkle</li>
+                                </ul>
+
+                                <ul class="project-features">
+                                    <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>~33μs In-Flight PII Masking</li>
+                                    <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Prompt Injection Guardrails</li>
+                                    <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>JIT Ephemeral DB Credentials</li>
+                                    <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Signed Merkle Audit Ledger</li>
+                                </ul>
+
+                                <div class="project-actions">
+                                    <a href="krypton/" class="btn btn-tone" id="krypton-landing">
+                                        <span>Explore Krypton Gateway</span>
+                                        <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                                    </a>
+                                    <a href="https://github.com/MuhammetEmirErkut/krypton-mcp" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="krypton-github">
+                                        <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                                        <span>GitHub Repository</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mock-ui-button lift">Add Application</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- App 3: Komisyon 101 -->
-        <div id="komisyon" class="showcase-card">
-            <div class="showcase-content">
-                <div class="app-meta">
-                    <div class="app-icon-wrapper komisyon">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#ffffff"
-                                stroke-width="2.5" />
-                            <line x1="8" y1="9" x2="16" y2="9" stroke="#ffffff" stroke-width="2.5"
-                                stroke-linecap="round" />
-                            <line x1="8" y1="15" x2="16" y2="15" stroke="#ffffff" stroke-width="2.5"
-                                stroke-linecap="round" />
-                            <line x1="12" y1="9" x2="12" y2="15" stroke="#ffffff" stroke-width="2.5"
-                                stroke-linecap="round" />
-                        </svg>
-                    </div>
-                    <span class="app-category komisyon">Finance & Commerce</span>
-                </div>
-
-                <h2>Komisyon 101</h2>
-                <p class="app-tagline">POS Commission & Revenue Calculator</p>
-                <p class="app-description">Komisyon 101 is a financial calculation utility for merchants and e-commerce sellers, computing bank POS commission rates, installment interest breakdowns, and net revenue margins with transparent financial math.</p>
-                <div class="tech-badges">
-                    <span class="tech-badge komisyon">Swift</span>
-                    <span class="tech-badge komisyon">SwiftUI</span>
-                    <span class="tech-badge komisyon">Financial Math Core</span>
-                    <span class="tech-badge komisyon">Local Storage</span>
-                </div>
-
-                <div class="features-list">
-                    <div class="feature-item komisyon">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Detailed POS Breakdown
-                    </div>
-                    <div class="feature-item komisyon">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Installment & Cost Analysis
-                    </div>
-                    <div class="feature-item komisyon">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Saved Calculations History
-                    </div>
-                    <div class="feature-item komisyon">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Fast Native iOS Interface
-                    </div>
-                </div>
-
-                <div class="app-actions">
-                    <a href="https://apps.apple.com/tr/app/e-ticaret-komisyon-hesaplama/id6758906305?l=en" target="_blank" rel="noopener noreferrer" class="btn-action primary komisyon" id="komisyon-appstore">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.5-.64.74-1.2 1.88-1.05 2.99 1.11.09 2.27-.58 3-1.43z" />
-                        </svg>
-                        <span>Download on App Store</span>
-                    </a>
-                    <a href="komisyon/" class="btn-action secondary komisyon" id="komisyon-legal">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                            <line x1="16" y1="13" x2="8" y2="13" />
-                            <line x1="16" y1="17" x2="8" y2="17" />
-                            <polyline points="10 9 9 9 8 9" />
-                        </svg>
-                        <span>Website & Support</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="showcase-preview">
-                <div class="device-mockup">
-                    <div class="device-notch"></div>
-                    <div class="device-screen komisyon">
-                        <div class="mock-ui-header">
-                            <span class="mock-ui-logo komisyon">Komisyon101</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-komisyon)"
-                                stroke-width="2.5">
-                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                            </svg>
+                        <div class="project-stage">
+                            <figure class="terminal">
+                                <img src="assets/krypton_demo.gif"
+                                    alt="Terminal demo of KryptonMCP masking PII in flight and verifying the audit ledger"
+                                    width="900" height="550" loading="lazy" decoding="async">
+                                <span class="stage-chip stage-chip--top" aria-hidden="true">
+                                    <span class="pulse"></span>PII masking · +33.4μs
+                                </span>
+                                <span class="stage-chip stage-chip--bottom" aria-hidden="true">
+                                    <svg class="icon"><use href="#i-check" /></svg>Merkle ledger verified
+                                </span>
+                            </figure>
                         </div>
+                    </article>
 
-                        <div class="mock-ui-card">
-                            <span class="mock-ui-title">Transaction Amount</span>
-                            <div class="mock-ui-value">₺10,000.00</div>
-                        </div>
+                    <!-- App 2: CareerLift -->
+                    <article id="careerlift" class="project project--reverse tone-lift" aria-labelledby="careerlift-title">
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-icon">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-careerlift" /></svg>
+                                </span>
+                                <p class="project-kicker">
+                                    <span class="project-category">Career & Productivity</span>
+                                    <span class="project-platform">iOS · App Store</span>
+                                </p>
+                            </div>
 
-                        <div class="mock-ui-card">
-                            <span class="mock-ui-title">Calculation Details</span>
-                            <div class="mock-ui-row komisyon">
-                                <span>POS Rate</span>
-                                <span>1.89%</span>
-                            </div>
-                            <div class="mock-ui-row komisyon">
-                                <span>Commission Fee</span>
-                                <span>₺189.00</span>
-                            </div>
-                            <div class="mock-ui-row komisyon">
-                                <span>Net Payout</span>
-                                <span>₺9,811.00</span>
+                            <h3 id="careerlift-title" class="project-title">CareerLift</h3>
+                            <p class="project-tagline">AI-Powered Job Application & Career Assistant</p>
+                            <p class="project-desc">CareerLift is an intelligent career assistant that organizes job applications in one place, manages interview prep pipelines, and optimizes resume writing workflows with AI assistance.</p>
+
+                            <ul class="project-stack" aria-label="Tech stack">
+                                <li>Swift</li>
+                                <li>SwiftUI</li>
+                                <li>CoreData</li>
+                                <li>AI Integration</li>
+                            </ul>
+
+                            <ul class="project-features">
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Resume Scoring Engine</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Smart Application Tracker</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Interview Prep Guide</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Career Growth Analytics</li>
+                            </ul>
+
+                            <div class="project-actions">
+                                <a href="https://apps.apple.com/tr/app/careerlift/id6754268399?l=en" target="_blank" rel="noopener noreferrer" class="btn btn-tone" id="careerlift-appstore">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-apple" /></svg>
+                                    <span>Download on App Store</span>
+                                </a>
+                                <a href="career/" class="btn btn-outline" id="careerlift-legal">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-doc" /></svg>
+                                    <span>Website & Support</span>
+                                </a>
                             </div>
                         </div>
 
-                        <div class="mock-ui-button komisyon">Calculate New Rate</div>
+                        <div class="project-stage" aria-hidden="true">
+                            <div class="phone">
+                                <div class="phone-screen">
+                                    <div class="phone-status">
+                                        <span>9:41</span>
+                                        <svg><use href="#i-status" /></svg>
+                                    </div>
+                                    <div class="app">
+                                        <div class="app-header">
+                                            <span class="app-logo">CareerLift</span>
+                                            <span class="app-avatar"></span>
+                                        </div>
+
+                                        <div class="app-card">
+                                            <span class="app-label">Profile Strength</span>
+                                            <span class="app-value">88%</span>
+                                            <span class="app-progress"><span></span></span>
+                                        </div>
+
+                                        <div class="app-stats">
+                                            <span><strong>12</strong>Applied</span>
+                                            <span><strong>4</strong>Interviews</span>
+                                            <span><strong>7</strong>Saved</span>
+                                        </div>
+
+                                        <span class="app-label">Recent Applications</span>
+                                        <ul class="app-list">
+                                            <li>
+                                                <span class="app-dot app-dot--green"></span>
+                                                <span><strong>Google - Mobile Developer</strong><small>Active Application - Interview</small></span>
+                                            </li>
+                                            <li>
+                                                <span class="app-dot app-dot--blue"></span>
+                                                <span><strong>Apple - iOS Architect</strong><small>Resume Submitted</small></span>
+                                            </li>
+                                        </ul>
+
+                                        <span class="app-button">Add Application</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- App 3: Komisyon 101 -->
+                    <article id="komisyon" class="project tone-komisyon" aria-labelledby="komisyon-title">
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-icon">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-komisyon" /></svg>
+                                </span>
+                                <p class="project-kicker">
+                                    <span class="project-category">Finance & Commerce</span>
+                                    <span class="project-platform">iOS · App Store</span>
+                                </p>
+                            </div>
+
+                            <h3 id="komisyon-title" class="project-title">Komisyon 101</h3>
+                            <p class="project-tagline">POS Commission & Revenue Calculator</p>
+                            <p class="project-desc">Komisyon 101 is a financial calculation utility for merchants and e-commerce sellers, computing bank POS commission rates, installment interest breakdowns, and net revenue margins with transparent financial math.</p>
+
+                            <ul class="project-stack" aria-label="Tech stack">
+                                <li>Swift</li>
+                                <li>SwiftUI</li>
+                                <li>Financial Math Core</li>
+                                <li>Local Storage</li>
+                            </ul>
+
+                            <ul class="project-features">
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Detailed POS Breakdown</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Installment & Cost Analysis</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Saved Calculations History</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Fast Native iOS Interface</li>
+                            </ul>
+
+                            <div class="project-actions">
+                                <a href="https://apps.apple.com/tr/app/e-ticaret-komisyon-hesaplama/id6758906305?l=en" target="_blank" rel="noopener noreferrer" class="btn btn-tone" id="komisyon-appstore">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-apple" /></svg>
+                                    <span>Download on App Store</span>
+                                </a>
+                                <a href="komisyon/" class="btn btn-outline" id="komisyon-legal">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-doc" /></svg>
+                                    <span>Website & Support</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-stage" aria-hidden="true">
+                            <div class="phone">
+                                <div class="phone-screen">
+                                    <div class="phone-status">
+                                        <span>9:41</span>
+                                        <svg><use href="#i-status" /></svg>
+                                    </div>
+                                    <div class="app">
+                                        <div class="app-header">
+                                            <span class="app-logo">Komisyon101</span>
+                                            <span class="app-icon-button"><svg class="icon"><use href="#i-clock" /></svg></span>
+                                        </div>
+
+                                        <div class="app-card">
+                                            <span class="app-label">Transaction Amount</span>
+                                            <span class="app-value">₺10,000.00</span>
+                                        </div>
+
+                                        <span class="app-label">Installments</span>
+                                        <div class="app-chips">
+                                            <span class="is-active">Single</span>
+                                            <span>3×</span>
+                                            <span>6×</span>
+                                            <span>9×</span>
+                                        </div>
+
+                                        <div class="app-card">
+                                            <span class="app-label">Calculation Details</span>
+                                            <span class="app-row"><span>POS Rate</span><span>1.89%</span></span>
+                                            <span class="app-row"><span>Commission Fee</span><span>₺189.00</span></span>
+                                            <span class="app-row app-row--total"><span>Net Payout</span><span>₺9,811.00</span></span>
+                                        </div>
+
+                                        <span class="app-button">Calculate New Rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-copy">
+                        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Contact</p>
+                        <h2 id="contact-title">Let's talk.</h2>
+                        <p>Questions about my apps, feedback, or a collaboration idea? Send me an email.</p>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="mailto:muhammetemir.erkut@gmail.com" class="contact-email">muhammetemir.erkut@gmail.com</a>
+                        <div class="contact-buttons">
+                            <a href="mailto:muhammetemir.erkut@gmail.com" class="btn btn-ink">
+                                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+                                <span>Send an Email</span>
+                            </a>
+                            <button type="button" class="btn btn-outline" data-copy="muhammetemir.erkut@gmail.com">
+                                <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+                                <span aria-live="polite">Copy Address</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-main">
-                <div class="footer-logo">
-                    Muhammet Emir<span>Erkut</span>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/MuhammetEmirErkut" target="_blank" rel="noopener noreferrer" class="social-icon"
-                        aria-label="GitHub">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                        </svg>
-                    </a>
-                    <a href="mailto:muhammetemir.erkut@gmail.com" class="social-icon" aria-label="Email">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Muhammet Emir Erkut. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="#projects">Projects</a>
-                </div>
-            </div>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="#" class="logo logo--small">Muhammet Emir<span>Erkut</span></a>
+            <p class="footer-copy">&copy; 2026 Muhammet Emir Erkut. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="https://github.com/MuhammetEmirErkut" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:muhammetemir.erkut@gmail.com">Email</a></li>
+            </ul>
         </div>
     </footer>
 
-    <!-- Smooth Scroll JavaScript -->
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth in-page scrolling that keeps hash fragments out of the URL
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
+                const behavior = reduceMotion.matches ? 'auto' : 'smooth';
                 if (targetId === '#') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior });
+                    return;
                 }
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior });
+                }
+            });
+        });
+
+        // Header gains a hairline border once the page scrolls
+        const header = document.querySelector('.site-header');
+        const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        syncHeader();
+        window.addEventListener('scroll', syncHeader, { passive: true });
+
+        // Copy-to-clipboard for the contact email
+        document.querySelectorAll('[data-copy]').forEach(button => {
+            if (!navigator.clipboard) {
+                button.hidden = true;
+                return;
+            }
+            const label = button.querySelector('span');
+            const original = label.textContent;
+            let resetTimer;
+            button.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(button.dataset.copy);
+                    label.textContent = 'Copied!';
+                } catch {
+                    label.textContent = 'Copy failed';
+                }
+                clearTimeout(resetTimer);
+                resetTimer = setTimeout(() => { label.textContent = original; }, 2000);
             });
         });
     </script>
