@@ -1215,6 +1215,13 @@ pre code {
    Comprehensive Responsive System (Mobile & Tablet)
    ========================================================================== */
 
+/* Small Laptop Breakpoint (<= 1100px): section links no longer fit beside the actions */
+@media (max-width: 1100px) {
+    .nav-links {
+        display: none;
+    }
+}
+
 /* Tablet Breakpoint (<= 860px) */
 @media (max-width: 860px) {
     .pillars-grid {
